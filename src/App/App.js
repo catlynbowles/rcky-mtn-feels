@@ -28,7 +28,13 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Emotions primaryEmotions={this.state.primaryEmotions}/>
+        <h1>VibeCheck</h1>
+        <Route exact path='/' render={() => 
+          <div>
+            <h3>How do you feel today?</h3>
+            <Emotions primaryEmotions={this.state.primaryEmotions}/>
+          </div>
+        }/>
       </main>
     )
   }
