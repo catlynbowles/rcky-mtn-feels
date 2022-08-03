@@ -1,12 +1,6 @@
-import { Component } from 'react'
+import { Component, useState, useEffect} from 'react'
 import './App.css';
 import { getData } from './apiCalls'
-// const [mainEmotions, setMainEmotions] = useState([{
-//   name: "",
-//   path: "",
-//   norms: {},
-//   secondaryEmotions: []
-// }])
 
 class App extends Component { 
   constructor() {
@@ -14,10 +8,11 @@ class App extends Component {
     this.state = {
       theSevenEmotions : [],
       emotionalGlobalTotals: {},
-      timezoneEmotions: []
+      timezoneEmotions: [],
+      selectedEmotion: ''
     }
   } 
-
+d
   componentDidMount = () => {
     const emotion = 'joy'
     const primaryEmotionData = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
@@ -28,8 +23,6 @@ class App extends Component {
       .then(data => this.setState({theSevenEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
   }
 
-
-
   render() {
     return (
       <div>hi</div>
@@ -38,3 +31,5 @@ class App extends Component {
 }
 
 export default App;
+
+
