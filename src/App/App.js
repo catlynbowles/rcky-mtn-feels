@@ -1,13 +1,14 @@
 import { Component } from 'react'
 import './App.css';
-import { getData } from './apiCalls'
+import { getData } from '../apiCalls'
 import { Route } from 'react-router-dom'
+import Emotions from '../Emotions/Emotions'
 
 class App extends Component { 
   constructor() {
     super()
     this.state = {
-      theSevenEmotions : [],
+      primaryEmotions: [],
       emotionalGlobalTotals: {},
       timezoneEmotions: [],
       selectedEmotion: ''
@@ -21,12 +22,14 @@ class App extends Component {
     const localEmotionalTotals = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${emotion}`)
 
     Promise.all([primaryEmotionData, primaryGlobalTotals, localEmotionalTotals])
-      .then(data => this.setState({theSevenEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
+      .then(data => this.setState({primaryEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
   }
 
   render() {
     return (
-      <div>hi</div>
+      <main>
+        <Emotions primaryEmotions={this.state.primaryEmotions}/>
+      </main>
     )
   }
 }
