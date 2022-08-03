@@ -11,23 +11,15 @@ class App extends Component {
     this.state = {
       primaryEmotions: [],
       globalTotals: {},
-      timezoneEmotions: [],
-      userEmotion: ''
     }
   } 
 
   componentDidMount = () => {
-    const emotion = 'joy'
     const primaryEmotionData = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
-    const localEmotionalTotals = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.state.userEmotion}`)
 
-    Promise.all([primaryEmotionData, primaryGlobalTotals, localEmotionalTotals])
-      .then(data => this.setState({primaryEmotions: data[0], globalTotals: data[1], timezoneEmotions: data[2]}))
-  }
-
-  handleClick = (name) => {
-    this.setState({userEmotion: name})
+    Promise.all([primaryEmotionData, primaryGlobalTotals])
+      .then(data => this.setState({primaryEmotions: data[0], globalTotals: data[1]}))
   }
 
   render() {
@@ -37,7 +29,7 @@ class App extends Component {
         <Route exact path='/' render={() => 
           <div>
             <h3>What are you feeling today?</h3>
-            <Emotions primaryEmotions={this.state.primaryEmotions} handleClick={this.handleClick}/>
+            <Emotions primaryEmotions={this.state.primaryEmotions}/>
           </div>
         }/>
         <Route path={`/:name`} render={({match}) => {
