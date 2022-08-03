@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FeelingsButton = ({id, key, name, secondaryEmotions, handleClick}) => {
-  console.log(name)
   return (
-    <button onClick={() => handleClick(name)}>{name}</button>
+    <Link to={`/${name}`} style={{textDecoration: 'none'}}>
+      <button onClick={() => handleClick(name)}>{name}</button>
+    </Link>
   )
 }
 
