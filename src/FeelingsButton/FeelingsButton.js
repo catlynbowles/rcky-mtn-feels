@@ -1,9 +1,9 @@
 import React from 'react'
 
-const FeelingsButton = ({id, key, name, secondaryEmotions}) => {
+const FeelingsButton = ({id, key, name, secondaryEmotions, handleClick}) => {
   console.log(name)
   return (
-    <button>{name}</button>
+    <button onClick={() => handleClick(name)}>{name}</button>
   )
 }
 

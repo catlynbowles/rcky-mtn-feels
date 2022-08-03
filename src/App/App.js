@@ -3,6 +3,7 @@ import './App.css';
 import { getData } from '../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
+import MainFeelingPage from '../MainFeelingPage/MainFeelingPage'
 
 class App extends Component { 
   constructor() {
@@ -11,7 +12,7 @@ class App extends Component {
       primaryEmotions: [],
       emotionalGlobalTotals: {},
       timezoneEmotions: [],
-      selectedEmotion: ''
+      userEmotion: ''
     }
   } 
 
@@ -25,21 +26,29 @@ class App extends Component {
       .then(data => this.setState({primaryEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
   }
 
+  handleClick = (name) => {
+    this.setState({userEmotion: name})
+  }
+
   render() {
     return (
       <main>
         <h1>VibeCheck</h1>
         <Route exact path='/' render={() => 
           <div>
-            <h3>How do you feel today?</h3>
-            <Emotions primaryEmotions={this.state.primaryEmotions}/>
+            <h3>What are you feeling today?</h3>
+            <Emotions primaryEmotions={this.state.primaryEmotions} handleClick={this.handleClick}/>
           </div>
         }/>
+        <MainFeelingPage userEmotion={this.state.userEmotion}/>
       </main>
     )
   }
 }
 
+{/* <Route exact path='/:userEmotion' render={({match}) => 
+  <MainFeelingPage userFeeling={match.params.userEmotion}/>
+}/> */}
 export default App;
 
 

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react'
 import FeelingsButton from '../FeelingsButton/FeelingsButton'
 
-const Emotions = ({primaryEmotions}) => {
+const Emotions = ({primaryEmotions, handleClick}) => {
   const emotionalButtons = primaryEmotions.map(emotion => {
     return (
       <FeelingsButton 
@@ -10,6 +10,7 @@ const Emotions = ({primaryEmotions}) => {
         key={emotion.path}
         name={emotion.name}
         secondaryEmotions={emotion.secondaryEmotions}
+        handleClick={handleClick}
       />
     )
   })
