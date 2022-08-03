@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       primaryEmotions: [],
-      emotionalGlobalTotals: {},
+      globalTotals: {},
       timezoneEmotions: [],
       userEmotion: ''
     }
@@ -23,7 +23,7 @@ class App extends Component {
     const localEmotionalTotals = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${emotion}`)
 
     Promise.all([primaryEmotionData, primaryGlobalTotals, localEmotionalTotals])
-      .then(data => this.setState({primaryEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
+      .then(data => this.setState({primaryEmotions: data[0], globalTotals: data[1], timezoneEmotions: data[2]}))
   }
 
   handleClick = (name) => {
@@ -40,7 +40,7 @@ class App extends Component {
             <Emotions primaryEmotions={this.state.primaryEmotions} handleClick={this.handleClick}/>
           </div>
         }/>
-        <MainFeelingPage userEmotion={this.state.userEmotion}/>
+        <MainFeelingPage userEmotion={this.state.userEmotion} globalTotals={this.state.globalTotals}/>
       </main>
     )
   }
