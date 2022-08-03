@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import React, {Component} from 'react'
 import { getData }from '../apiCalls'
+import { Link } from 'react-router-dom'
 
 class MainFeelingPage extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class MainFeelingPage extends Component {
   }
 
   componentDidMount = () => {
-    const localEmotionalTotals = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
+    getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
       .then(data => data[0].counts['northAmerica/mountain'])
       .then(data => this.setState({localTotals: data}))
   } 
@@ -28,6 +29,9 @@ class MainFeelingPage extends Component {
         <p>Know that there are others that feel the same way:</p>
         <p>{this.state.localTotals} in your region</p>
         <p>{this.globalEmotion()} in your world</p>
+        <Link to='/'>
+          <button>Back</button>
+        </Link>
       </section>
     )
   }
