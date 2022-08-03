@@ -1,6 +1,7 @@
-import { Component, useState, useEffect} from 'react'
+import { Component } from 'react'
 import './App.css';
 import { getData } from './apiCalls'
+import { Route } from 'react-router-dom'
 
 class App extends Component { 
   constructor() {
@@ -12,7 +13,7 @@ class App extends Component {
       selectedEmotion: ''
     }
   } 
-d
+
   componentDidMount = () => {
     const emotion = 'joy'
     const primaryEmotionData = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
