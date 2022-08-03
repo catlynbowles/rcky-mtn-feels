@@ -9,7 +9,6 @@ const Emotions = ({primaryEmotions}) => {
         id={emotion.path}
         key={emotion.path}
         name={emotion.name}
-        secondaryEmotions={emotion.secondaryEmotions}
       />
     )
   })

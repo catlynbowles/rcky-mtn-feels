@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const FeelingsButton = ({id, key, name, secondaryEmotions, handleClick}) => {
+const FeelingsButton = ({name}) => {
   return (
     <Link to={`/${name}`} style={{textDecoration: 'none'}}>
       <button>{name}</button>

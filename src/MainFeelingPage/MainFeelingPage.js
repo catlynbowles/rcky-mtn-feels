@@ -18,7 +18,7 @@ class MainFeelingPage extends Component {
   generateSecondaryEmotions = () => {
     if (this.props.primaryEmotions.length > 1) {
       const userInfo = this.props.primaryEmotions.find(emotion => emotion.name === this.props.id)
-      const generateSecondaries = userInfo.secondaryEmotions.map(emotion => emotion !== 'other' && <p>{emotion}</p>)
+      const generateSecondaries = userInfo.secondaryEmotions.map(emotion => emotion !== 'other' && <p key={emotion}>{emotion}</p>)
     return generateSecondaries.length > 1 && <div><h3>You might also be feeling...</h3>{generateSecondaries}</div>
     }
   }
