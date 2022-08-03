@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import { Component } from 'react'
 import './App.css';
+import { getData } from './apiCalls'
+// const [mainEmotions, setMainEmotions] = useState([{
+//   name: "",
+//   path: "",
+//   norms: {},
+//   secondaryEmotions: []
+// }])
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component { 
+  constructor() {
+    super()
+    this.state = {
+      theSevenEmotions : [],
+      emotionalGlobalTotals: {},
+      timezoneEmotions: []
+    }
+  } 
+
+  componentDidMount = () => {
+    const emotion = 'joy'
+    const primaryEmotionData = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
+    const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
+    const localEmotionalTotals = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${emotion}`)
+
+    Promise.all([primaryEmotionData, primaryGlobalTotals, localEmotionalTotals])
+      .then(data => this.setState({theSevenEmotions: data[0], emotionalGlobalTotals: data[1], timezoneEmotions: data[2]}))
+  }
+
+
+
+  render() {
+    return (
+      <div>hi</div>
+    )
+  }
 }
 
 export default App;
