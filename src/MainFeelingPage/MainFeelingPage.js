@@ -11,9 +11,16 @@ class MainFeelingPage extends Component {
     }
   }
 
-  globalEmotion = () => {
-    console.log(this.props.id, 'match')
+  getGlobalTotal = () => {
     return this.props.globalTotals[this.props.id]
+  }
+
+  generateSecondaryEmotions = () => {
+    if (this.props.primaryEmotions.length > 1) {
+      const userInfo = this.props.primaryEmotions.find(emotion => emotion.name === this.props.id)
+      const generateSecondaries = userInfo.secondaryEmotions.map(emotion => <p>{emotion}</p>)
+    return generateSecondaries.length > 1 && <div><h3>You might also be feeling...</h3>{generateSecondaries}</div>
+    }
   }
 
   componentDidMount = () => {
@@ -27,11 +34,12 @@ class MainFeelingPage extends Component {
       <section>
         <h2>If you feel {this.props.id} today...</h2>
         <p>Know that there are others that feel the same way:</p>
-        <p>{this.state.localTotals} in your region</p>
-        <p>{this.globalEmotion()} in your world</p>
+        <p>{this.state.localTotals} in your region.</p>
+        <p>{this.getGlobalTotal()} in the world.</p>
         <Link to='/'>
-          <button>Back</button>
+          <button>Feelin' something else</button>
         </Link>
+        {this.generateSecondaryEmotions()}
       </section>
     )
   }

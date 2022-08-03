@@ -41,9 +41,8 @@ class App extends Component {
           </div>
         }/>
         <Route path={`/:name`} render={({match}) => {
-          console.log(match)
           return (
-            <MainFeelingPage id={match.params.name} globalTotals={this.state.globalTotals} />
+            <MainFeelingPage id={match.params.name} globalTotals={this.state.globalTotals} primaryEmotions={this.state.primaryEmotions}/>
           )
         }
       
