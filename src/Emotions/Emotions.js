@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react'
 import FeelingsButton from '../FeelingsButton/FeelingsButton'
+import './Emotions.css'
 
 const Emotions = ({primaryEmotions}) => {
   const emotionalButtons = primaryEmotions.map(emotion => {
@@ -14,7 +15,7 @@ const Emotions = ({primaryEmotions}) => {
   })
 
   return (
-    <section>
+    <section className='button-container'>
       {emotionalButtons}
     </section>
   )
