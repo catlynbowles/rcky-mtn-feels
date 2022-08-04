@@ -1,12 +1,12 @@
 import React from 'react'
 
-const PlaylistCard = ({playlistImg, playlistName}) => {
+const PlaylistCard = ({playlistImg, playlistName, uri}) => {
   return (
     <div>
-            <a>
+            <a href={uri}>
             <img src={playlistImg}></img>
             </a>
-            <p>{playlistName}</p>
+            {playlistName}
           </div>
   )
 }

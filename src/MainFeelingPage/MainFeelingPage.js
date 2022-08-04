@@ -25,14 +25,24 @@ class MainFeelingPage extends Component {
     }
   }
 
+  getRandomPlaylists = (array) => {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    let selected = shuffled.slice(0, 3);
+    return selected
+  }
+
   generatePlaylistInfo = () => {
+    let samplePlaylists = this.getRandomPlaylists(this.state.playlistsInfo)
+    console.log(samplePlaylists)
     if (this.state.playlistsInfo.length > 1) {
-      const playlistCards = this.state.playlistsInfo.map(playlist => {
+      
+      const playlistCards = samplePlaylists.map(playlist => {
         let playlistImg = playlist['data'].images['items'][0].sources[0].url
         return (
           <PlaylistCard 
             playlistImg={playlistImg}
             playlistName={playlist['data'].name}
+            uri={playlist['data'].uri}
           />
         )
       })
@@ -53,7 +63,7 @@ class MainFeelingPage extends Component {
     const playlistData = getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
     
     Promise.all([timepointData, playlistData])
-      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items.splice(0, 3)}))
+      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items}))
   } 
 
   render() {
