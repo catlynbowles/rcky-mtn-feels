@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './MainFeelingPage.css'
 import '../FeelingsButton/FeelingsButton.css'
+import LoadingIcon from '../LoadingIcon/LoadingIcon'
 
 class MainFeelingPage extends Component {
   constructor() {
@@ -59,12 +60,15 @@ class MainFeelingPage extends Component {
   } 
 
   render() {
+    const loadingOperator = {
+
+    }
     return (
       <section className='page-container'>
         <article className='stats-container'>
           <h2 className='small-header'>If you feel {this.props.id} today...</h2>
           <h2 className='small-header'>You're not alone. There are:</h2>
-          <p className='totals'>{this.state.localTotals.toLocaleString()} others in your region.</p>
+          {!this.state.localTotals ? <LoadingIcon/> : <p className='totals'> {this.state.localTotals.toLocaleString()} others in your region.</p>}
           <p className='totals'>{this.getGlobalTotal().toLocaleString()} in the world.</p>
         </article>
           {this.state.playlistsInfo.length > 1 && <div><p className='small-header'>Tunes To Help You Feel It</p>

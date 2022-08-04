@@ -4,7 +4,6 @@ const LoadingIcon = () => {
   const fontStyle = {
     'color': 'white',
     'fontSize': '15px',
-    'contenAlign': 'center'
   }
 
   const loadingContainer = {
