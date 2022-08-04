@@ -58,3 +58,24 @@
   color: #827aca;
   text-shadow: 0 0 4px #827aca;
 }
+
+.fear p {
+  color: #7aca8b;
+  text-shadow: 0 0 4px #7aca8b;
+}
+
+.anger p {
+  color: #ed5362;
+  text-shadow: 0 0 4px #ed5362;
+}
+
+.surprise p {
+  color: #c75eed;
+  text-shadow: 0 0 4px #c75eed;
+}
+
+.other p {
+  color: #e7e1da;
+  text-shadow: 0 0 4px #e7e1da;
+}
+
