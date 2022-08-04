@@ -6,6 +6,7 @@ import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './MainFeelingPage.css'
 import '../FeelingsButton/FeelingsButton.css'
 import LoadingIcon from '../LoadingIcon/LoadingIcon'
+import Error from '../Error/Error'
 
 class MainFeelingPage extends Component {
   constructor() {
@@ -13,7 +14,8 @@ class MainFeelingPage extends Component {
     this.state = {
       localTotals: '',
       playlistsInfo: [], 
-      globalTotals: ''
+      globalTotals: '',
+      error: ''
     }
   }
 
@@ -41,14 +43,12 @@ class MainFeelingPage extends Component {
   }
 
   componentDidMount = () => {
-  
-
     const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
     
     Promise.all([localTotal, primaryGlobalTotals])
       .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], globalTotals: data[1][this.props.id]}))
-    
+      .catch(err => this.setState({error: `${err}`}))
   } 
 
   render() {
@@ -57,7 +57,7 @@ class MainFeelingPage extends Component {
         <article className='stats-container'>
           <h2 className='small-header'>If you feel {this.props.id} today...</h2>
           <h2 className='small-header'>You're not alone. There are:</h2>
-          {!this.state.localTotals && !this.state.globalTotals ? <LoadingIcon/> : <div><p className='totals'> {this.state.localTotals.toLocaleString()} others in your region.</p>
+          {this.state.error ? <Error text={this.state.error}/> : !this.state.localTotals && !this.state.globalTotals ? <LoadingIcon/> : <div><p className='totals'> {this.state.localTotals.toLocaleString()} others in your region.</p>
           <p className='totals'>{this.state.globalTotals.toLocaleString()} in the world.</p></div>}
         </article>
           {this.state.playlistsInfo.length > 1 && <div><p className='small-header'>Tunes To Help You Feel It</p>
