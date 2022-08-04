@@ -27,9 +27,14 @@ class MainFeelingPage extends Component {
   generatePlaylistInfo = () => {
     if (this.state.playlistsInfo.length > 1) {
       const playlistCards = this.state.playlistsInfo.map(playlist => {
-        console.log(playlist)
+        console.log('30', playlist['data'].images['items'][0].sources[0].url)
         return (
-        <p>{playlist['data'].name}</p>
+          <div>
+            <a>
+            <img src={playlist['data'].images['items'][0].sources[0].url}></img>
+            </a>
+            <p>{playlist['data'].name}</p>
+          </div>
         )
       })
       return playlistCards
