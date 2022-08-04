@@ -41,13 +41,7 @@ class MainFeelingPage extends Component {
   }
 
   componentDidMount = () => {
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'c000080a0amsh715f90a5bf2339cp1f2e77jsne099d3a6af4b',
-        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-      }
-    };
+  
 
     const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
@@ -55,8 +49,6 @@ class MainFeelingPage extends Component {
     Promise.all([localTotal, primaryGlobalTotals])
       .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], globalTotals: data[1][this.props.id]}))
     
-    // getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
-      // .then(data => this.setState({playlistsInfo: data.playlists.items}))
   } 
 
   render() {

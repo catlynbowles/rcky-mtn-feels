@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# // const options = {
+    //   method: 'GET',
+    //   headers: {
+    //     'X-RapidAPI-Key': 'c000080a0amsh715f90a5bf2339cp1f2e77jsne099d3a6af4b',
+    //     'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+    //   }
+    // };
+    // getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
+      // .then(data => this.setState({playlistsInfo: data.playlists.items}))
