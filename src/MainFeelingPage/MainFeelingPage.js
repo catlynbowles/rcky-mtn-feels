@@ -7,7 +7,8 @@ class MainFeelingPage extends Component {
   constructor() {
     super()
     this.state = {
-      localTotals: ''
+      localTotals: '',
+      playlistsInfo: []
     }
   }
 
@@ -23,9 +24,19 @@ class MainFeelingPage extends Component {
     }
   }
 
+  generatePlaylistInfo = () => {
+    if (this.state.playlistsInfo.length > 1) {
+      const playlistCards = this.state.playlistsInfo.map(playlist => {
+        console.log(playlist)
+        return (
+        <p>{playlist['data'].name}</p>
+        )
+      })
+      return playlistCards
+    }
+  }
+
   componentDidMount = () => {
-    getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
-    .then(data => this.setState({localTotals: data[0].counts['northAmerica/mountain']}))
     const options = {
       method: 'GET',
       headers: {
@@ -33,11 +44,12 @@ class MainFeelingPage extends Component {
         'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
       }
     };
+
+    const timepointData = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
+    const playlistData = getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
     
-    fetch(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+    Promise.all([timepointData, playlistData])
+      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items.splice(0, 3)}))
   } 
 
   render() {
@@ -50,6 +62,7 @@ class MainFeelingPage extends Component {
         <Link to='/'>
           <button>Feelin' something else</button>
         </Link>
+        <p>Some tunes to help you feel it {this.generatePlaylistInfo()}</p>
         {this.generateSecondaryEmotions()}
       </section>
     )
