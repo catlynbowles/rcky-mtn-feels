@@ -34,7 +34,7 @@ class MainFeelingPage extends Component {
       }
     };
     
-    fetch('https://spotify23.p.rapidapi.com/search/?q=%3CSAD%3E&type=multi&offset=0&limit=10&numberOfTopResults=5', options)
+    fetch(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
       .then(response => response.json())
       .then(response => console.log(response))
       .catch(err => console.error(err));
