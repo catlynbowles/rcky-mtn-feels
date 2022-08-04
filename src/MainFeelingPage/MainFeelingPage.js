@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import { getData }from '../apiCalls'
 import { Link } from 'react-router-dom'
 import PlaylistCard from '../PlaylistCard/PlaylistCard'
+import './MainFeelingPage.css'
+import '../FeelingsButton/FeelingsButton.css'
 
 class MainFeelingPage extends Component {
   constructor() {
@@ -58,24 +60,26 @@ class MainFeelingPage extends Component {
     };
 
     const timepointData = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
-    const playlistData = getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
+    // const playlistData = getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
     
-    Promise.all([timepointData, playlistData])
-      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items}))
+    // Promise.all([timepointData, playlistData])
+    //   .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items}))
   } 
 
   render() {
     return (
-      <section>
-        <h2>If you feel {this.props.id} today...</h2>
-        <p>Know that there are others that feel the same way:</p>
-        <p>{this.state.localTotals} in your region.</p>
-        <p>{this.getGlobalTotal()} in the world.</p>
-        <Link to='/'>
-          <button>Feelin' something else</button>
-        </Link>
-        <p>Some tunes to help you feel it {this.generatePlaylistInfo()}</p>
+      <section className='page-container'>
+        <article className='stats-container'>
+          <h2 className='small-header'>If you feel {this.props.id} today...</h2>
+          <h2 className='small-header'>You're not alone. There are:</h2>
+          <p className='totals'>{this.state.localTotals} others in your region.</p>
+          <p className='totals'>{this.getGlobalTotal()} in the world.</p>
+        </article>
+        <p className='small-header'>Tunes To Help You Feel It {this.generatePlaylistInfo()}</p>
         {this.generateSecondaryEmotions()}
+        <Link to='/' style={{textDecoration: 'none'}}>
+          <div className='feelingButton home-button'><p>Back</p></div>
+        </Link>
       </section>
     )
   }
