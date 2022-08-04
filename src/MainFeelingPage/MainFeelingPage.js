@@ -17,12 +17,6 @@ class MainFeelingPage extends Component {
     }
   }
 
-  getGlobalTotal = () => {
-    if (this.state.globalTotals.length >1) {
-      return this.state.globalTotals[this.props.id]
-    }
-  }
-
   getRandomPlaylists = (array) => {
     const shuffled = array.sort(() => 0.5 - Math.random());
     let selected = shuffled.slice(0, 3);
