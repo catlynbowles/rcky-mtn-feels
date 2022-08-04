@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import { getData }from '../apiCalls'
 import { Link } from 'react-router-dom'
 import PlaylistCard from '../PlaylistCard/PlaylistCard'
-import './MainFeelingPage.css'
+import './FeelingView.css'
 import '../FeelingsButton/FeelingsButton.css'
 import LoadingIcon from '../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
@@ -52,6 +52,9 @@ class MainFeelingPage extends Component {
   } 
 
   render() {
+    if (this.state.globalTotals && this.state.localTotals) {
+      console.log(this.state.globalTotals, this.state.localTotals)
+    }
     return (
       <section className='page-container'>
         <article className='stats-container'>

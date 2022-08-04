@@ -3,7 +3,7 @@ import './App.css';
 import { getData } from '../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
-import MainFeelingPage from '../MainFeelingPage/MainFeelingPage'
+import MainFeelingPage from '../FeelingView/FeelingView'
 import LoadingIcon from '../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
 
@@ -25,9 +25,6 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.primaryEmotions) {
-      console.log(this.state.primaryEmotions)
-    }
     return (
       <body className='body'>
         <h1 className='title'>☆・゜Rocky Mountain VibeCheck ゜・☆</h1>

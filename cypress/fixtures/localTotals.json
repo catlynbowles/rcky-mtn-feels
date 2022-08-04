@@ -1,0 +1,34 @@
+[
+  {
+    "start": "Thu Aug 04 07:00:00 +1000 2022",
+    "earliestLocalStart": {
+    "start": "Wed Aug 03 10:00:00 -1100 2022",
+    "zone": "northAmerica/midway"
+    },
+    "latestLocalStart": {
+    "start": "Wed Aug 03 19:00:00 -0200 2022",
+    "zone": "northAmerica/greenland"
+    },
+    "counts": {
+    "northAmerica/*": 15453,
+    "northAmerica/alaska": 80,
+    "northAmerica/arizona": 334,
+    "northAmerica/atlantic": 257,
+    "northAmerica/central": 3675,
+    "northAmerica/chihuahua": 8,
+    "northAmerica/eastern": 5614,
+    "northAmerica/greenland": 24,
+    "northAmerica/guadalajara": 4,
+    "northAmerica/hawaii": 116,
+    "northAmerica/indiana": 531,
+    "northAmerica/mazatlan": 5,
+    "northAmerica/mexico": 64,
+    "northAmerica/monterrey": 18,
+    "northAmerica/mountain": 604,
+    "northAmerica/newfoundland": 13,
+    "northAmerica/pacific": 4069,
+    "northAmerica/saskatchewan": 18,
+    "northAmerica/tijuana": 19
+    }
+  }
+]
