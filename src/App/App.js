@@ -24,7 +24,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <body className='body'>
         <h1>VibeCheck</h1>
         <Route exact path='/' render={() => 
           <div>
@@ -39,7 +39,7 @@ class App extends Component {
         }
       
         }/>
-      </main>
+      </body>
     )
   }
 }

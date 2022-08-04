@@ -33,18 +33,16 @@ class MainFeelingPage extends Component {
 
   generatePlaylistInfo = () => {
     let samplePlaylists = this.getRandomPlaylists(this.state.playlistsInfo)
-    console.log(samplePlaylists)
-    if (this.state.playlistsInfo.length > 1) {
-      
+    if (this.state.playlistsInfo.length > 1) { 
       const playlistCards = samplePlaylists.map(playlist => {
         let playlistImg = playlist['data'].images['items'][0].sources[0].url
-        return (
-          <PlaylistCard 
-            playlistImg={playlistImg}
-            playlistName={playlist['data'].name}
-            uri={playlist['data'].uri}
-          />
-        )
+          return (
+            <PlaylistCard 
+              playlistImg={playlistImg}
+              playlistName={playlist['data'].name}
+              uri={playlist['data'].uri}
+            />
+          )
       })
       return playlistCards
     }
