@@ -38,6 +38,8 @@
 .home-button p {
   font-size: 26px;
   line-height: 100px;
+  color: #0922e4;
+  text-shadow: 0 0 4px #0922e4;
 }
 
 .home-button {

@@ -19,14 +19,6 @@ class MainFeelingPage extends Component {
     return this.props.globalTotals[this.props.id]
   }
 
-  generateSecondaryEmotions = () => {
-    if (this.props.primaryEmotions.length > 1) {
-      const userInfo = this.props.primaryEmotions.find(emotion => emotion.name === this.props.id)
-      const generateSecondaries = userInfo.secondaryEmotions.map(emotion => emotion !== 'other' && <p key={emotion}>{emotion}</p>)
-      return generateSecondaries.length > 1 && <div><h3>You might also be feeling...</h3>{generateSecondaries}</div>
-    }
-  }
-
   getRandomPlaylists = (array) => {
     const shuffled = array.sort(() => 0.5 - Math.random());
     let selected = shuffled.slice(0, 3);
@@ -59,11 +51,11 @@ class MainFeelingPage extends Component {
       }
     };
 
-    const timepointData = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
-    // const playlistData = getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
+    getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
+      .then(data => this.setState({localTotals: data[0].counts['northAmerica/mountain']}))
     
-    // Promise.all([timepointData, playlistData])
-    //   .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], playlistsInfo: data[1].playlists.items}))
+    // getData(`https://spotify23.p.rapidapi.com/search/?q=%3C${this.props.id.toUpperCase()}%3E&type=multi&offset=0&limit=10&numberOfTopResults=5`, options)
+      // .then(data => this.setState({playlistsInfo: data.playlists.items}))
   } 
 
   render() {
@@ -72,11 +64,12 @@ class MainFeelingPage extends Component {
         <article className='stats-container'>
           <h2 className='small-header'>If you feel {this.props.id} today...</h2>
           <h2 className='small-header'>You're not alone. There are:</h2>
-          <p className='totals'>{this.state.localTotals} others in your region.</p>
-          <p className='totals'>{this.getGlobalTotal()} in the world.</p>
+          <p className='totals'>{this.state.localTotals.toLocaleString()} others in your region.</p>
+          <p className='totals'>{this.getGlobalTotal().toLocaleString()} in the world.</p>
         </article>
-        <p className='small-header'>Tunes To Help You Feel It {this.generatePlaylistInfo()}</p>
-        {this.generateSecondaryEmotions()}
+          {this.state.playlistsInfo.length > 1 && <div><p className='small-header'>Tunes To Help You Feel It</p>
+        <div className='playlist-container'> {this.generatePlaylistInfo()}
+        </div></div>}
         <Link to='/' style={{textDecoration: 'none'}}>
           <div className='feelingButton home-button'><p>Back</p></div>
         </Link>

@@ -4,6 +4,7 @@ import { getData } from '../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
 import MainFeelingPage from '../MainFeelingPage/MainFeelingPage'
+import LoadingIcon from '../LoadingIcon/LoadingIcon'
 
 class App extends Component { 
   constructor() {
@@ -30,7 +31,7 @@ class App extends Component {
         <Route exact path='/' render={() => 
           <div>
             <h3 className='subtitle'>What are you feeling today?</h3>
-            <Emotions primaryEmotions={this.state.primaryEmotions}/>
+            {!this.state.primaryEmotions.length ? <LoadingIcon/> : <Emotions primaryEmotions={this.state.primaryEmotions}/>}
           </div>
         }/>
         <Route path={`/:name`} render={({match}) => {
