@@ -12,7 +12,6 @@ class App extends Component {
     super()
     this.state = {
       primaryEmotions: [],
-      globalTotals: {},
       error: ''
     }
   } 
@@ -26,6 +25,9 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.primaryEmotions) {
+      console.log(this.state.primaryEmotions)
+    }
     return (
       <body className='body'>
         <h1 className='title'>☆・゜Rocky Mountain VibeCheck ゜・☆</h1>
