@@ -16,11 +16,8 @@ class App extends Component {
   } 
 
   componentDidMount = () => {
-    const primaryEmotionData = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
-    const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
-
-    Promise.all([primaryEmotionData, primaryGlobalTotals])
-      .then(data => this.setState({primaryEmotions: data[0], globalTotals: data[1]}))
+    getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
+      .then(data => this.setState({primaryEmotions: data}))
   }
 
   render() {
@@ -36,7 +33,7 @@ class App extends Component {
         }/>
         <Route path={`/:name`} render={({match}) => {
           return (
-            <MainFeelingPage id={match.params.name} globalTotals={this.state.globalTotals} primaryEmotions={this.state.primaryEmotions}/>
+            <MainFeelingPage id={match.params.name} primaryEmotions={this.state.primaryEmotions}/>
           )
         }
       
