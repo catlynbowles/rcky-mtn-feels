@@ -25,8 +25,8 @@ class App extends Component {
   render() {
     return (
       <body className='body'>
-        <h1 className='title'>Rocky Mountain VibeCheck</h1>
-        <p className='line'>*・゜・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜・*:.。.*.。.:*・゜・*</p>
+        <h1 className='title'>☆・゜Rocky Mountain VibeCheck ゜・☆</h1>
+        <p className='line'>*・゜・*:.。.*.。.:*・ç・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜・*:.。.*.。.:*・゜・*</p>
         <Route exact path='/' render={() => 
           <div>
             <h3 className='subtitle'>What are you feeling today?</h3>
