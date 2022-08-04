@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './FeelingsButton.css'
+import Keyframes from '@keyframes/core'
 
-const FeelingsButton = ({id, key, name, secondaryEmotions, handleClick}) => {
+const FeelingsButton = ({name}) => {
   return (
     <Link to={`/${name}`} style={{textDecoration: 'none'}}>
-      <button onClick={() => handleClick(name)}>{name}</button>
+      <div className={`${name} feelingButton`}><p>{name}</p></div>
     </Link>
   )
 }
