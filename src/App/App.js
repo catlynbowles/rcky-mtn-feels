@@ -25,10 +25,11 @@ class App extends Component {
   render() {
     return (
       <body className='body'>
-        <h1>VibeCheck</h1>
+        <h1 className='title'>Rocky Mountain VibeCheck</h1>
+        <p className='line'>*・゜・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜・*:.。.*.。.:*・゜・*</p>
         <Route exact path='/' render={() => 
           <div>
-            <h3>What are you feeling today?</h3>
+            <h3 className='subtitle'>What are you feeling today?</h3>
             <Emotions primaryEmotions={this.state.primaryEmotions}/>
           </div>
         }/>

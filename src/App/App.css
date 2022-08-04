@@ -8,3 +8,34 @@ body {
   height: 100%;
   margin:60px auto;
 }
+
+.title {
+  display: block;
+  text-align: center;
+  line-height: 120px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 75px;
+  color: #b346e6;
+  text-shadow: 0 0 4px #b346e6;
+  margin-bottom: 0;
+}
+
+.subtitle,
+.line,
+.subline {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  color: #e67b46;
+  text-shadow: 0 0 4px #e67b46;
+}
+
+.line {
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  color: #090401;
+  text-shadow: 0 0 4px #fbfaf9;
+}
