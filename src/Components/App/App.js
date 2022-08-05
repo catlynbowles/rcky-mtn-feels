@@ -49,8 +49,3 @@ class App extends Component {
 
 export default App;
 
-App.propTypes = {
-  error: PropTypes.string.isRequired,
-  primaryEmotions: PropTypes.array.isRequired
-}
-

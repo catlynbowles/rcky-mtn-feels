@@ -1,13 +1,3 @@
-.small-header {
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-size: 26px;
-  color: #857e7a;
-  text-shadow: 0 0 4px #857e7a;
-  margin: 0px;
-  margin-top: 10px;
-}
 
 .stats-container {
   border: 2px solid #857e7a;
@@ -24,17 +14,6 @@
   flex-direction: column;
 }
 
-.totals {
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-size: 40px;
-  color: #0922e4;
-  text-shadow: 0 0 4px #0922e4;
-  margin: 0px;
-  margin-top: 15px;
-}
-
 .home-button p {
   font-size: 26px;
   line-height: 100px;
@@ -45,14 +24,4 @@
 .home-button {
   width: 100px;
   height: 100px;
-}
-
-.text-info {
-  color: rgb(139, 139, 139);
-  text-align: center;
-  font-size: 11px;
-  width: 800px;
-  position: fixed;
-  bottom: 0;
-  margin: 5px;
 }

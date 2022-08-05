@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react'
-import FeelingsButton from '../FeelingsButton/FeelingsButton'
+import FeelingsButton from '../Button/Button'
 import './Emotions.css'
 import PropTypes from 'prop-types'
 

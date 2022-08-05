@@ -4,10 +4,13 @@ import { getData }from '../../apiCalls'
 import { Link } from 'react-router-dom'
 import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './FeelingView.css'
-import '../FeelingsButton/FeelingsButton.css'
+import '../Button/Button.css'
 import LoadingIcon from '../../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
 import PropTypes from 'prop-types'
+import ViewSubtitle from '../ViewSubtitle/ViewSubtitle'
+import StatsBox from '../StatsBox/StatsBox'
+import Footer from '../Footer/Footer'
 
 class FeelingView extends Component {
   constructor() {
@@ -26,26 +29,6 @@ class FeelingView extends Component {
     return selected
   }
 
-  generatePlaylistInfo = () => {
-    let samplePlaylists = this.getRandomPlaylists(this.state.playlistsInfo)
-
-    if (this.state.playlistsInfo.length > 1) { 
-      const playlistCards = samplePlaylists.map(playlist => {
-
-        let playlistImg = playlist['data'].images['items'][0].sources[0].url
-
-          return (
-            <PlaylistCard 
-              playlistImg={playlistImg}
-              playlistName={playlist['data'].name}
-              uri={playlist['data'].uri}
-            />
-          )
-      })
-      return playlistCards
-    }
-  }
-
   componentDidMount = () => {
     const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
@@ -56,27 +39,18 @@ class FeelingView extends Component {
   } 
 
   render() {
-    if (this.state.globalTotals && this.state.localTotals) {
-      console.log(this.state.globalTotals, this.state.localTotals)
-    }
     return (
       <section className='page-container'>
         <article className='stats-container'>
-          <h2 className='small-header'>If you feel {this.props.id} today...<br></br>You're not alone. There are:</h2>
+          <ViewSubtitle id={this.props.id}/>
           {this.state.error ? <Error text={this.state.error}/> : 
-          !this.state.localTotals && !this.state.globalTotals ? <LoadingIcon/> : 
-          <div><p className='totals'> {this.state.localTotals.toLocaleString()} others in your region.</p>
-          <p className='totals'>{this.state.globalTotals.toLocaleString()} in the world.</p></div>}
+          !this.state.localTotals && !this.state.globalTotals ? <LoadingIcon /> : 
+          <StatsBox localTotals={this.state.localTotals} globalTotals={this.state.globalTotals} />}
         </article>
-          {this.state.playlistsInfo.length > 1 && 
-          <div><p className='small-header'>Tunes To Help You Feel It</p>
-        <article className='playlist-container'> {this.generatePlaylistInfo()}
-        </article>
-        </div>}
         <Link to='/' style={{textDecoration: 'none'}}>
           <div className='feelingButton home-button'><p>Back</p></div>
         </Link>
-        <footer className='text-info'>Totals are pulled from the We Feel API, which calculates incidences of emotions from tweets occuring in different areas across the world. Local totals for Rocky Mountain VibeCheck are calculated for MST time zone only. For more information, visit https://wefeel.csiro.au/main/#/.</footer>
+        <Footer />
       </section>
     )
   }

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './FeelingsButton.css'
+import './Button.css'
 
 const FeelingsButton = ({name}) => {
   return (

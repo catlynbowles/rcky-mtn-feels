@@ -1,0 +1,9 @@
+.text-info {
+  color: rgb(139, 139, 139);
+  text-align: center;
+  font-size: 11px;
+  width: 800px;
+  position: fixed;
+  bottom: 0;
+  margin: 5px;
+}
