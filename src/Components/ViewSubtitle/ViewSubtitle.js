@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewSubtitle.css'
+import PropTypes from 'prop-types'
 
 const ViewSubtitle = ({id}) => {
   return (
@@ -8,3 +9,7 @@ const ViewSubtitle = ({id}) => {
 }
 
 export default ViewSubtitle;
+
+ViewSubtitle.propTypes = {
+  id: PropTypes.string.isRequired
+}

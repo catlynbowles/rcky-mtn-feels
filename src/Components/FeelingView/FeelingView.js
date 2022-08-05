@@ -2,7 +2,6 @@ import { render } from '@testing-library/react'
 import React, {Component} from 'react'
 import { getData }from '../../apiCalls'
 import { Link } from 'react-router-dom'
-import PlaylistCard from '../PlaylistCard/PlaylistCard'
 import './FeelingView.css'
 import '../Button/Button.css'
 import LoadingIcon from '../../LoadingIcon/LoadingIcon'
@@ -11,7 +10,7 @@ import PropTypes from 'prop-types'
 import ViewSubtitle from '../ViewSubtitle/ViewSubtitle'
 import StatsBox from '../StatsBox/StatsBox'
 import Footer from '../Footer/Footer'
-import Playlists from '../Playlists/Playlists'
+
 
 class FeelingView extends Component {
   constructor() {
