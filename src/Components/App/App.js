@@ -6,7 +6,6 @@ import Emotions from '../Emotions/Emotions'
 import FeelingView from '../FeelingView/FeelingView'
 import LoadingIcon from '../../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
-import PropTypes from 'prop-types'
 import Header from '../Header/Header'
 import Subtitle from '../Subtitle/Subtitle'
 
