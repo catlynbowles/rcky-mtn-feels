@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Rocky Mountain Vibes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1437" alt="Screen Shot 2022-08-05 at 2 33 56 PM" src="https://user-images.githubusercontent.com/98493391/183158557-1efc4309-44fe-417c-b1c4-7de195fdfdb4.png">
 
-## Available Scripts
+<img width="1294" alt="Screen Shot 2022-08-05 at 2 34 31 PM" src="https://user-images.githubusercontent.com/98493391/183158632-c2fbe9c3-d027-4052-9697-7e14847ce5c9.png">
 
-In the project directory, you can run:
 
-### `npm start`
+## Deploy:
+- [Deployed Link](https://rcky-vibes.herokuapp.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
+- [Introduction](#introduction)
+- [Set Up](#set-up)
+- [Features](#features)
+- [Future Features](#future-features)
+- [Reflection](#reflection)
+- [Technologies](#technologies)
+- [Contributor](#contributors)
+- [Project Specifications](#project-specifications)
+- 
+### Introduction
+This is an application to display the most up-to-date content regarding emotional states in the MST time zone and the world. Calculated from the We Feel API, which stores data regarding user tweets in different time zones. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://user-images.githubusercontent.com/98493391/183159652-6966ff76-43d4-4afe-9c5c-0e6f35ffbfb2.mov
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Set Up
+1. Clone this repository.
+2. `cd` into the directory.
+3. Run `npm install`.
+4. Start the server by running `npm start` and view at http://localhost:3000/.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Features
+- Displays seven primary emotions for the user to select.
+- User can select their current emotional state and view statistics of others feeling this way in the MST time zone and the world.
+- User can close detail window and go back to the landing page. 
 
-### `npm run eject`
+### Future Features
+- Add playlists recommended to user based on emotional selection.
+- Find colors associated with each emotion to display upon selection.
+- Each time a user selects an emotion, post to another api to keep track of current selections happening on the site. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Reflection
+During this project I developed a stronger understanding of using React to generate user friendly applications while implementing Cypress, Router and CSS to display concepts that I find interesting. Researching APIs, I also learned how to navigate finding keys, using API parameters, and have a stronger conceptual understanding of how to select an API for a project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technologies
+- React
+- Router
+- JavaScript
+- HTML
+- JSX
+- CSS
+- API Fetch
+- Cypress
+- Heroku
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Contributors
+- [Catlyn Bowles](https://www.linkedin.com/in/catlyn-bowles/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Project Specifications
+- Project specs can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html).
