@@ -18,6 +18,7 @@ class FeelingView extends Component {
     this.state = {
       localTotals: '',
       globalTotals: '',
+      secondaryEmotions: [],
       error: ''
     }
   }
@@ -25,9 +26,10 @@ class FeelingView extends Component {
   componentDidMount = () => {
     const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
+    const secondaryEmotions = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/${this.props.id}/secondary`)
     
-    Promise.all([localTotal, primaryGlobalTotals])
-      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], globalTotals: data[1][this.props.id]}))
+    Promise.all([localTotal, primaryGlobalTotals, secondaryEmotions])
+      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], globalTotals: data[1][this.props.id], secondaryEmotions: data[2]}))
       .catch(err => this.setState({error: `${err}`}))
   } 
 
@@ -38,7 +40,10 @@ class FeelingView extends Component {
           <ViewSubtitle id={this.props.id}/>
           {this.state.error ? <Error text={this.state.error}/> : 
           !this.state.localTotals && !this.state.globalTotals ? <LoadingIcon /> : 
-          <StatsBox localTotals={this.state.localTotals} globalTotals={this.state.globalTotals} />}
+          <div>
+            <StatsBox localTotals={this.state.localTotals} globalTotals={this.state.globalTotals} secondaryEmotions={this.state.secondaryEmotions} />
+          </div>
+          }
         </article>
         <Link to='/' style={{textDecoration: 'none'}}>
           <div className='feelingButton home-button'><p>Back</p></div>
