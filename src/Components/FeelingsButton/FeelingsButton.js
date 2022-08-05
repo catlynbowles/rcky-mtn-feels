@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './FeelingsButton.css'
-import Keyframes from '@keyframes/core'
 
 const FeelingsButton = ({name}) => {
   return (
@@ -12,3 +12,7 @@ const FeelingsButton = ({name}) => {
 }
 
 export default FeelingsButton;
+
+FeelingsButton.propType = {
+  name: PropTypes.string.isRequired
+}

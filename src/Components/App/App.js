@@ -1,11 +1,14 @@
 import { Component } from 'react'
 import './App.css';
-import { getData } from '../apiCalls'
+import { getData } from '../../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
-import MainFeelingPage from '../FeelingView/FeelingView'
-import LoadingIcon from '../LoadingIcon/LoadingIcon'
+import FeelingView from '../FeelingView/FeelingView'
+import LoadingIcon from '../../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
+import PropTypes from 'prop-types'
+import Header from '../Header/Header'
+import Subtitle from '../Subtitle/Subtitle'
 
 class App extends Component { 
   constructor() {
@@ -27,21 +30,18 @@ class App extends Component {
   render() {
     return (
       <body className='body'>
-        <h1 className='title'>☆・゜Rocky Mountain VibeCheck ゜・☆</h1>
-        <p className='line'>*・゜・*:.。.*.。.:*・ç・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜・*:.。.*.。.:*・゜・*</p>
+        <Header />
         <Route exact path='/' render={() => 
-          <div>
-            <h3 className='subtitle'>What are you feeling today?</h3>
+          <section>
+            <Subtitle />
             {this.state.error ? <Error text={this.state.error}/> : !this.state.primaryEmotions.length ? <LoadingIcon/> : <Emotions primaryEmotions={this.state.primaryEmotions}/>}
-          </div>
+          </section>
         }/>
         <Route path={`/:name`} render={({match}) => {
           return (
-            <MainFeelingPage id={match.params.name} primaryEmotions={this.state.primaryEmotions}/>
+            <FeelingView id={match.params.name}/>
           )
-        }
-      
-        }/>
+        }}/>
       </body>
     )
   }
@@ -49,4 +49,8 @@ class App extends Component {
 
 export default App;
 
+App.propTypes = {
+  error: PropTypes.string.isRequired,
+  primaryEmotions: PropTypes.array.isRequired
+}
 

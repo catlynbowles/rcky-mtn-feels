@@ -14,11 +14,13 @@ describe('Home Page', () => {
   })
 
   it('Should contain a number and text stating the totals in the MST.', () => {
-    cy.get('.totals').should('contain.text', ' 557 others in your region.2,033,264 in the world.')
+    cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=love', {fixture: "localTotals"})
+      cy.get('.totals').should('contain.text', '604 others in your region.2,033,264 in the world.')
   })
 
   it('Should contain a back button to return home.', () => {
-    cy.get('.home-button').should('contain.text', 'Back')
+    cy.get('.home-button').should('contain.text', 'Back').click()
+    cy.url().should('eq', 'http://localhost:3000/')
   })
 
   it('Should display an error message if the global total API request fails.', () => {

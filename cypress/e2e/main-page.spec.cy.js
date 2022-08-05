@@ -14,6 +14,11 @@ describe('Home Page', () => {
     cy.get('.feelingButton').should('contain.text', 'joy')
     cy.get('.feelingButton').should('contain.text', 'surprise')
   })
+  
+  it('Should contain buttons that are clickable.', () => {
+    cy.get('.feelingButton').contains('love').click()
+    cy.url().should('eq', 'http://localhost:3000/love')
+  })
 
   it('Should display an error message if the request fails.', () => {
     cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary', {
@@ -31,7 +36,4 @@ describe('Home Page', () => {
     cy.get('.error-text').should('contain.text', 'Looks like we\'re having trouble loading this. (Error: Internal Server Error)')
   })
 
-  // it('Should contain buttons that are clickable.', () => {
-  //   cy.get('.feelingButton').contains('love').click()
-  // })
 })
