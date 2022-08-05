@@ -5,7 +5,7 @@ const PlaylistCard = ({playlistImg, playlistName, uri}) => {
   return (
     <div>
       <a href={uri}>
-      <img src={playlistImg}></img>
+      <img src={playlistImg} height='50' width='50'></img>
       </a>
       {playlistName}
     </div>

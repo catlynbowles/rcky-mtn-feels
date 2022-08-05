@@ -11,22 +11,16 @@ import PropTypes from 'prop-types'
 import ViewSubtitle from '../ViewSubtitle/ViewSubtitle'
 import StatsBox from '../StatsBox/StatsBox'
 import Footer from '../Footer/Footer'
+import Playlists from '../Playlists/Playlists'
 
 class FeelingView extends Component {
   constructor() {
     super()
     this.state = {
       localTotals: '',
-      playlistsInfo: [], 
       globalTotals: '',
       error: ''
     }
-  }
-
-  getRandomPlaylists = (array) => {
-    const shuffled = array.sort(() => 0.5 - Math.random());
-    let selected = shuffled.slice(0, 3);
-    return selected
   }
 
   componentDidMount = () => {
