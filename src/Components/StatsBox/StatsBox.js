@@ -10,9 +10,8 @@ const StatsBox = ({localTotals, globalTotals, secondaryEmotions}) => {
   }
 
   const generateSecondaryEmotions = secondaryEmotions.length > 0 && secondaryEmotions.map(emotion => {
-      console.log(emotion)
       return (
-        <p className='small-header}' style={secondStyle}>{emotion.name}</p>
+        <p className='small-header' style={secondStyle} key={emotion.name}>{emotion.name}</p>
       )
     })
   
