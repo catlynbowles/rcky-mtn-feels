@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import { getData }from '../../apiCalls'
 import { Link } from 'react-router-dom'
 import './FeelingView.css'
@@ -12,36 +12,34 @@ import StatsBox from '../StatsBox/StatsBox'
 import Footer from '../Footer/Footer'
 
 
-class FeelingView extends Component {
-  constructor() {
-    super()
-    this.state = {
-      localTotals: '',
-      globalTotals: '',
-      secondaryEmotions: [],
-      error: ''
-    }
-  }
+const FeelingView = ({id}) => {
+  const [localTotals, setLocalTotals] = useState('')
+  const [globalTotals, setGlobalTotals] = useState('')
+  const [secondaryEmotions, setSecondaryEmotions] = useState([])
+  const [error, setError] = useState('')
 
-  componentDidMount = () => {
-    const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${this.props.id}`)
+  useEffect(() => {
+    const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
-    const secondaryEmotions = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/${this.props.id}/secondary`)
-    
+    const secondaryEmotions = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/${id}/secondary`)
+    console.log('useeffect2')
     Promise.all([localTotal, primaryGlobalTotals, secondaryEmotions])
-      .then(data => this.setState({localTotals: data[0][0].counts['northAmerica/mountain'], globalTotals: data[1][this.props.id], secondaryEmotions: data[2]}))
-      .catch(err => this.setState({error: `${err}`}))
-  } 
-
-  render() {
+      .then(data => {
+        setLocalTotals(data[0][0].counts['northAmerica/mountain'])
+        setGlobalTotals(data[1][id])
+        setSecondaryEmotions(data[2])
+      })
+      .catch(err => setError(`${err}`))
+  }, [])
+  
     return (
       <section className='page-container'>
         <article className='stats-container'>
-          <ViewSubtitle id={this.props.id}/>
-          {this.state.error ? <Error text={this.state.error}/> : 
-          !this.state.localTotals && !this.state.globalTotals ? <LoadingIcon /> : 
+          <ViewSubtitle id={id}/>
+          {error ? <Error text={error}/> : 
+          !localTotals && !globalTotals ? <LoadingIcon /> : 
           <div>
-            <StatsBox localTotals={this.state.localTotals} globalTotals={this.state.globalTotals} secondaryEmotions={this.state.secondaryEmotions} />
+            <StatsBox localTotals={localTotals} globalTotals={globalTotals} secondaryEmotions={secondaryEmotions} />
           </div>
           }
         </article>
@@ -51,7 +49,6 @@ class FeelingView extends Component {
         <Footer />
       </section>
     )
-  }
 }
 
 export default FeelingView;
