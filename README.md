@@ -29,8 +29,8 @@ https://user-images.githubusercontent.com/98493391/183189810-3d142886-187e-4bf1-
 4. Start the server by running `npm start` and view at http://localhost:3000/.
 
 ### Run Tests 
-1. Install cypress with `npx cypress install`
-2. Run cypress with `npm cypress open`
+1. Install cypress with `npm install cypress --save-dev`
+2. Run cypress with `npx cypress open`
 3. Open in Chrome browser. 
 4. Click on different specs to view tests in real time. 
 
