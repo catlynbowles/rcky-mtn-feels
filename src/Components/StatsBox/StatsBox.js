@@ -6,7 +6,7 @@ const StatsBox = ({localTotals, globalTotals, secondaryEmotions}) => {
 
   const secondStyle = {
     'color': '#0922e4',
-    'text-shadow': '0 0 4px #0922e4'
+    'textShadow': '0 0 4px #0922e4'
   }
 
   const generateSecondaryEmotions = secondaryEmotions.length > 0 && secondaryEmotions.map(emotion => {

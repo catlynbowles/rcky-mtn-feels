@@ -8,32 +8,24 @@ import LoadingIcon from '../../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
 import Header from '../Header/Header'
 import Subtitle from '../Subtitle/Subtitle'
+import {useState, useEffect} from 'react'
+const App = () => { 
+  const [primaryEmotions, setPrimaryEmotions] = useState([])
+  const [error, setError] = useState('')
 
-class App extends Component { 
-  constructor() {
-    super()
-    this.state = {
-      primaryEmotions: [],
-      error: ''
-    }
-  } 
-
-  componentDidMount = () => {
+  useEffect(() => {
     getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
-      .then(data => this.setState({primaryEmotions: data}))
-      .catch(error => {
-        this.setState({error: `${error}`})
-      })
-  }
+      .then(data => setPrimaryEmotions(data))
+      .catch(error => setError(`${error}`))
+  }) 
 
-  render() {
     return (
       <body className='body'>
         <Header />
         <Route exact path='/' render={() => 
           <section>
             <Subtitle />
-            {this.state.error ? <Error text={this.state.error}/> : !this.state.primaryEmotions.length ? <LoadingIcon/> : <Emotions primaryEmotions={this.state.primaryEmotions}/>}
+            {error ? <Error text={error}/> : !primaryEmotions.length ? <LoadingIcon/> : <Emotions primaryEmotions={primaryEmotions}/>}
           </section>
         }/>
         <Route path={`/:name`} render={({match}) => {
@@ -43,7 +35,6 @@ class App extends Component {
         }}/>
       </body>
     )
-  }
 }
 
 export default App;
