@@ -22,7 +22,7 @@ const FeelingView = ({id}) => {
     const localTotal = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=${id}`)
     const primaryGlobalTotals = getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals')
     const secondaryEmotions = getData(`https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/${id}/secondary`)
-    
+    console.log('useeffect2')
     Promise.all([localTotal, primaryGlobalTotals, secondaryEmotions])
       .then(data => {
         setLocalTotals(data[0][0].counts['northAmerica/mountain'])
@@ -30,7 +30,7 @@ const FeelingView = ({id}) => {
         setSecondaryEmotions(data[2])
       })
       .catch(err => setError(`${err}`))
-  })
+  }, [])
   
     return (
       <section className='page-container'>
