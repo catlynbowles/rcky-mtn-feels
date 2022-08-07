@@ -17,7 +17,7 @@ const App = () => {
     getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
       .then(data => setPrimaryEmotions(data))
       .catch(error => setError(`${error}`))
-  }) 
+  }, []) 
 
     return (
       <body className='body'>
