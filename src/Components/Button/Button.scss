@@ -63,15 +63,23 @@
   text-shadow: 0 0 4px #e7e1da;
 }
 
-.Diary p {
-  font-size: 3rem;
-  color: white;
-  line-height: 4rem;
-  padding: 1rem;
-}
-
-.Diary {
+.diary {
   border-radius: 0px;
   width: 12.8rem;
   height: 10rem;
+  p {
+    font-size: 3rem;
+    color: white;
+    line-height: 3rem;
+    padding: 2rem;
+    margin: 0;
+  }
+}
+
+.diary p {
+  font-size: 3rem;
+  color: white;
+  line-height: 3rem;
+  padding: 2rem;
+  margin: 0;
 }
