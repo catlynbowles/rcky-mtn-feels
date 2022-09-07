@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react'
 import FeelingsButton from '../Button/Button'
-import './Emotions.css'
+import './Emotions.scss'
 import PropTypes from 'prop-types'
 
 const Emotions = ({primaryEmotions}) => {

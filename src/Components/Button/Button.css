@@ -1,17 +1,25 @@
 @keyframes pulse {
-  0% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
-  50% { box-shadow:0 0 16px #f1b5cc, inset 0 0 14px #f1b5cc; }
-  100% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
+  0% {
+    box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+  }
+
+  50% {
+    box-shadow: 0 0 16px #f1b5cc, inset 0 0 14px #f1b5cc;
+  }
+
+  100% {
+    box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+  }
 }
 
 .feelingButton {
   background-color: transparent;
-  width: 120px;
-  height: 120px;
+  width: 8rem;
+  height: 8rem;
   border-radius: 75px;
   box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
   -webkit-animation: pulse 2s linear 1s infinite;
-  margin: 1em;
+  margin: 2rem;
 }
 
 .feelingButton p {
@@ -54,4 +62,3 @@
   color: #e7e1da;
   text-shadow: 0 0 4px #e7e1da;
 }
-

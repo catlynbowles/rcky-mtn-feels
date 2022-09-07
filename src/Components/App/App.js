@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import './App.css';
+import './App.scss';
 import { getData } from '../../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
@@ -20,7 +20,7 @@ const App = () => {
   }, []) 
 
     return (
-      <body className='body'>
+      <div className='body'>
         <Header />
         <Route exact path='/' render={() => 
           <section>
@@ -33,7 +33,7 @@ const App = () => {
             <FeelingView id={match.params.name}/>
           )
         }}/>
-      </body>
+      </div>
     )
 }
 

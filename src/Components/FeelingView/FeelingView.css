@@ -1,13 +1,12 @@
-
 .stats-container {
   border: 2px solid #857e7a;
-  width: 500px;
-  padding: 10px;
-  margin-top: 0px;
+  width: 19rem;
+  padding: 2rem;
+  margin-top: 0;
 }
 
 .page-container {
-  margin: 10px;
+  margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,13 +14,13 @@
 }
 
 .home-button p {
-  font-size: 26px;
-  line-height: 100px;
+  font-size: 1.6rem;
+  line-height: 6rem;
   color: #3fd560;
   text-shadow: 0 0 4px #3fd560;
 }
 
 .home-button {
-  width: 100px;
-  height: 100px;
+  width: 6rem;
+  height: 6rem;
 }

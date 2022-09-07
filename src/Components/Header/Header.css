@@ -1,10 +1,9 @@
 .title {
   display: block;
   text-align: center;
-  line-height: 120px;
   font-family: sans-serif;
   font-weight: 100;
-  font-size: 75px;
+  font-size: 4rem;
   color: #b346e6;
   text-shadow: 0 0 4px #b346e6;
   margin-bottom: 0;
