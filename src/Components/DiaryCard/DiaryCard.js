@@ -1,10 +1,12 @@
 import React from 'react'
 
-const DiaryCard = ({emotion, description}) => {
+const DiaryCard = ({emotion, description, id}) => {
   return (
-    <div>
-      {emotion}
-    </div>
+    <article>
+      <p>{id}</p>
+      <h3>{emotion}</h3>
+      <p>{description}</p>
+    </article>
   )
 }
 
