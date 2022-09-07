@@ -43,7 +43,7 @@ const FeelingView = ({ id }) => {
             </div>
         }
       </article>
-      <Link to='/' style={{ textDecoration: 'none' }}>
+      <Link to='/connect' style={{ textDecoration: 'none' }}>
         <div className='feelingButton home-button'><p>Back</p></div>
       </Link>
 

@@ -1,12 +1,14 @@
 import React from 'react'
-import './Header.css'
+import './Header.scss'
+import Nav from '../Nav/Nav'
 
 const Header = () => {
   return (
-    <header>
-      <h1 className='title'>Rocky Mountain Vibes</h1>
-      <p className='line'>☆・゜゜・☆</p>
-    </header>
+      <header className='header'>
+        <h1 className='title'>Rocky Mountain Vibes</h1>
+        <p className='line'>☆・゜゜・☆</p>
+        <Nav />
+      </header>
   )
 }
 

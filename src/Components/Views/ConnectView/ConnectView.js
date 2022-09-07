@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Subtitle from "../../Subtitle/Subtitle";
 import LoadingIcon from "../../../LoadingIcon/LoadingIcon";
 import "../../Button/Button.scss";
 import Emotions from "../../Emotions/Emotions";
 import Error from "../../Error/Error";
 
-const HomeView = ({ error, primaryEmotions }) => {
+const ConnectView = ({ error, primaryEmotions }) => {
   return (
     <section>
       <Subtitle />
@@ -15,4 +14,4 @@ const HomeView = ({ error, primaryEmotions }) => {
   )
 }
 
-export default HomeView;
+export default ConnectView;

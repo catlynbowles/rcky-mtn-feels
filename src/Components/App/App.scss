@@ -1,6 +1,6 @@
 html {
   height: 100vh;
-  background: #1f1f1f;
+  background: antiquewhite;
 }
 
 .body {
@@ -11,10 +11,14 @@ html {
 .subtitle,
 .line,
 .subline {
-  text-align: center;
   font-family: sans-serif;
   font-weight: 100;
   font-size: 40px;
   color: #e67b46;
   text-shadow: 0 0 4px #e67b46;
+}
+
+.subtitle,
+.subline {
+  text-align: center;
 }

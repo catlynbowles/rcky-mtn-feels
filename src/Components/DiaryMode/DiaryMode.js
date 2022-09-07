@@ -21,7 +21,6 @@ const DiaryMode = ({ primaryEmotions }) => {
   }
 
   const handleSelect = (e) => {
-    console.log(e)
     setEntryEmotion(e)
   }
 
