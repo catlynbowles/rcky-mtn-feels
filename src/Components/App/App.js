@@ -1,15 +1,18 @@
 import { Component } from 'react'
-import './App.css';
+import './App.scss';
 import { getData } from '../../apiCalls'
 import { Route } from 'react-router-dom'
 import Emotions from '../Emotions/Emotions'
-import FeelingView from '../FeelingView/FeelingView'
+import FeelingView from '../Views/FeelingView/FeelingView'
 import LoadingIcon from '../../LoadingIcon/LoadingIcon'
 import Error from '../Error/Error'
 import Header from '../Header/Header'
 import Subtitle from '../Subtitle/Subtitle'
-import {useState, useEffect} from 'react'
-const App = () => { 
+import DiaryMode from '../DiaryMode/DiaryMode';
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import HomeView from '../Views/HomeView/HomeView';
+const App = () => {
   const [primaryEmotions, setPrimaryEmotions] = useState([])
   const [error, setError] = useState('')
 
@@ -17,24 +20,26 @@ const App = () => {
     getData('https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary')
       .then(data => setPrimaryEmotions(data))
       .catch(error => setError(`${error}`))
-  }, []) 
+  }, [])
 
-    return (
-      <body className='body'>
-        <Header />
-        <Route exact path='/' render={() => 
-          <section>
-            <Subtitle />
-            {error ? <Error text={error}/> : !primaryEmotions.length ? <LoadingIcon/> : <Emotions primaryEmotions={primaryEmotions}/>}
-          </section>
-        }/>
-        <Route path={`/:name`} render={({match}) => {
-          return (
-            <FeelingView id={match.params.name}/>
-          )
-        }}/>
-      </body>
-    )
+  return (
+    <div className='body'>
+      <Header />
+      <Route exact path='/'>
+        <HomeView error={error} primaryEmotions={primaryEmotions}/>
+      </Route>
+      <Route exact path='/33' render={(() =>
+        <DiaryMode />
+      )}
+      />
+      <Route exact path={`/feeling/:name`} render={({ match }) => {
+        console.log(match)
+        return (
+          <FeelingView id={match.params.name} />
+        )
+      }} />
+    </div>
+  )
 }
 
 export default App;

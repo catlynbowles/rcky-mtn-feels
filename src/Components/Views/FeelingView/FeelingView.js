@@ -1,18 +1,18 @@
 import { render } from '@testing-library/react'
-import React, {useState, useEffect} from 'react'
-import { getData }from '../../apiCalls'
+import React, { useState, useEffect } from 'react'
+import { getData } from '../../../apiCalls'
 import { Link } from 'react-router-dom'
 import './FeelingView.css'
-import '../Button/Button.css'
-import LoadingIcon from '../../LoadingIcon/LoadingIcon'
-import Error from '../Error/Error'
+// import '../Button/Button.css'
+import LoadingIcon from '../../../LoadingIcon/LoadingIcon'
+import Error from '../../Error/Error'
 import PropTypes from 'prop-types'
-import ViewSubtitle from '../ViewSubtitle/ViewSubtitle'
-import StatsBox from '../StatsBox/StatsBox'
-import Footer from '../Footer/Footer'
+import ViewSubtitle from '../../ViewSubtitle/ViewSubtitle'
+import StatsBox from '../../StatsBox/StatsBox'
+import Footer from '../../Footer/Footer'
 
 
-const FeelingView = ({id}) => {
+const FeelingView = ({ id }) => {
   const [localTotals, setLocalTotals] = useState('')
   const [globalTotals, setGlobalTotals] = useState('')
   const [secondaryEmotions, setSecondaryEmotions] = useState([])
@@ -31,24 +31,24 @@ const FeelingView = ({id}) => {
       })
       .catch(err => setError(`${err}`))
   }, [])
-  
-    return (
-      <section className='page-container'>
-        <article className='stats-container'>
-          <ViewSubtitle id={id}/>
-          {error ? <Error text={error}/> : 
-          !localTotals && !globalTotals ? <LoadingIcon /> : 
-          <div>
-            <StatsBox localTotals={localTotals} globalTotals={globalTotals} secondaryEmotions={secondaryEmotions} />
-          </div>
-          }
-        </article>
-        <Link to='/' style={{textDecoration: 'none'}}>
-          <div className='feelingButton home-button'><p>Back</p></div>
-        </Link>
-        <Footer />
-      </section>
-    )
+
+  return (
+    <section className='page-container'>
+      <article className='stats-container'>
+        <ViewSubtitle id={id} />
+        {error ? <Error text={error} /> :
+          !localTotals && !globalTotals ? <LoadingIcon /> :
+            <div>
+              <StatsBox localTotals={localTotals} globalTotals={globalTotals} secondaryEmotions={secondaryEmotions} />
+            </div>
+        }
+      </article>
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        <div className='feelingButton home-button'><p>Back</p></div>
+      </Link>
+
+    </section>
+  )
 }
 
 export default FeelingView;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const ViewSubtitle = ({id}) => {
   return (
-    <h2 className='small-header'>If you feel {id} today...<br></br>You're not alone. There are:</h2>
+    <h2 className='small-header'>If you feel {id} today, you're not alone. There are:</h2>
   )
 }
 
