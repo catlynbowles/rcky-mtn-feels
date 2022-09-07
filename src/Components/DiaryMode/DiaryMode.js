@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useLocalStorage } from '../../useLocalStorage';
 import Dropdown from '../Dropdown/Dropdown';
 import DiaryEntries from '../DiaryEntries/DiaryEntries';
+import InputForm from '../InputForm/InputForm';
 
 const DiaryMode = ({ primaryEmotions }) => {
   const [entryEmotion, setEntryEmotion] = useState('');
@@ -12,7 +13,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   const submitEntry = (emotion, description) => {
     console.log(emotion, description)
     const newEntry = {
-      id: Date().toLocaleString(),
+      id: Date().toLocaleString().substr(0, 24),
       emotion: emotion,
       description: description
     }
@@ -27,14 +28,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   return (
     <section>
       <Dropdown primaryEmotions={primaryEmotions} handleSelect={handleSelect} />
-      <input
-        type="text"
-        value={entryDescription}
-        onChange={(e) => setEntryDescription(e.target.value)}
-        placeholder="Describe it, where you feel it in your body, what it feels like"
-        aria-label="entry"
-      />
-      <input type="submit" value="Submit" onClick={() => submitEntry(entryEmotion, entryDescription)}></input>
+      <InputForm entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
       {entries.length ? <DiaryEntries entries={entries} /> : <h3>No entries to display. Add one above!</h3>}
     </section>
   )
