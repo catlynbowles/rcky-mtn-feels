@@ -14,8 +14,8 @@
 
 .feelingButton {
   background-color: transparent;
-  width: 8rem;
-  height: 8rem;
+  width: 8.5rem;
+  height: 8.5rem;
   border-radius: 75px;
   box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
   -webkit-animation: pulse 2s linear 1s infinite;
@@ -27,7 +27,7 @@
   text-align: center;
   line-height: 120px;
   font-family: sans-serif;
-  font-weight: 100;
+
   font-size: 24px;
   color: #ea4c89;
   text-shadow: 0 0 4px #ea4c89;
@@ -61,4 +61,17 @@
 .other p {
   color: #e7e1da;
   text-shadow: 0 0 4px #e7e1da;
+}
+
+.Diary p {
+  font-size: 3rem;
+  color: white;
+  line-height: 4rem;
+  padding: 1rem;
+}
+
+.Diary {
+  border-radius: 0px;
+  width: 12.8rem;
+  height: 10rem;
 }

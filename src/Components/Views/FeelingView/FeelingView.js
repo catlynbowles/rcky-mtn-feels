@@ -1,15 +1,15 @@
 import { render } from '@testing-library/react'
 import React, { useState, useEffect } from 'react'
-import { getData } from '../../apiCalls'
+import { getData } from '../../../apiCalls'
 import { Link } from 'react-router-dom'
 import './FeelingView.css'
-import '../Button/Button.css'
-import LoadingIcon from '../../LoadingIcon/LoadingIcon'
-import Error from '../Error/Error'
+// import '../Button/Button.css'
+import LoadingIcon from '../../../LoadingIcon/LoadingIcon'
+import Error from '../../Error/Error'
 import PropTypes from 'prop-types'
-import ViewSubtitle from '../ViewSubtitle/ViewSubtitle'
-import StatsBox from '../StatsBox/StatsBox'
-import Footer from '../Footer/Footer'
+import ViewSubtitle from '../../ViewSubtitle/ViewSubtitle'
+import StatsBox from '../../StatsBox/StatsBox'
+import Footer from '../../Footer/Footer'
 
 
 const FeelingView = ({ id }) => {

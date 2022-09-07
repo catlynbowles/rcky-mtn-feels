@@ -3,17 +3,22 @@ import React from 'react'
 import FeelingsButton from '../Button/Button'
 import './Emotions.scss'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
-const Emotions = ({primaryEmotions}) => {
+const Emotions = ({ primaryEmotions }) => {
   const emotionalButtons = primaryEmotions.map(emotion => {
     return (
-      <FeelingsButton 
+      <FeelingsButton
         id={emotion.path}
         key={emotion.path}
         name={emotion.name}
       />
     )
   })
+
+  const diaryStyle = {
+    "color": 'white',
+  }
 
   return (
     <section className='button-container'>
@@ -22,7 +27,7 @@ const Emotions = ({primaryEmotions}) => {
   )
 }
 
-export default Emotions; 
+export default Emotions;
 
 Emotions.propTypes = {
   primaryEmotions: PropTypes.array.isRequired
