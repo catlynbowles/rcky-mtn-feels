@@ -4,16 +4,16 @@ import { useLocalStorage } from '../../useLocalStorage';
 import Dropdown from '../Dropdown/Dropdown';
 import DiaryEntries from '../DiaryEntries/DiaryEntries';
 
-const DiaryMode = ({primaryEmotions}) => {
+const DiaryMode = ({ primaryEmotions }) => {
   const [entryEmotion, setEntryEmotion] = useState('');
   const [entryDescription, setEntryDescription] = useState('');
-  const [entries, setEntries] =  useLocalStorage([], "");
+  const [entries, setEntries] = useLocalStorage([], "");
 
   const submitEntry = (emotion, description) => {
     console.log(emotion, description)
     const newEntry = {
       id: Date().toLocaleString(),
-      emotion: emotion, 
+      emotion: emotion,
       description: description
     }
     setEntries([...entries, newEntry])
@@ -26,7 +26,7 @@ const DiaryMode = ({primaryEmotions}) => {
 
   return (
     <section>
-      <Dropdown primaryEmotions={primaryEmotions} handleSelect={handleSelect}/>
+      <Dropdown primaryEmotions={primaryEmotions} handleSelect={handleSelect} />
       <input
         type="text"
         value={entryDescription}
@@ -34,8 +34,8 @@ const DiaryMode = ({primaryEmotions}) => {
         placeholder="Describe it, where you feel it in your body, what it feels like"
         aria-label="entry"
       />
-      <DiaryEntries entries={entries}/>
       <input type="submit" value="Submit" onClick={() => submitEntry(entryEmotion, entryDescription)}></input>
+      {entries.length ? <DiaryEntries entries={entries} /> : <h3>No entries to display. Add one above!</h3>}
     </section>
   )
 }

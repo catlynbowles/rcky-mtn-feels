@@ -1,5 +1,6 @@
 import React from 'react';
 import DiaryCard from '../DiaryCard/DiaryCard';
+import './DiaryEntries.scss'
 
 const DiaryEntries = ({ entries }) => {
   let diaryCards = entries.map(entry => {
@@ -13,7 +14,7 @@ const DiaryEntries = ({ entries }) => {
     )
   })
   return (
-    <article>
+    <article className='card-container'>
       {diaryCards}
     </article>
   )

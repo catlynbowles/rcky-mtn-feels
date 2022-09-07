@@ -16,14 +16,10 @@ const Emotions = ({ primaryEmotions }) => {
     )
   })
 
-  const diaryStyle = {
-    "color": 'white',
-  }
-
   return (
     <section className='button-container'>
       {emotionalButtons}
-      <Link to='/33'>
+      <Link to='/diary'>
         <button className='diary feelingButton'><p>Diary Mode</p></button>
       </Link>
     </section>
