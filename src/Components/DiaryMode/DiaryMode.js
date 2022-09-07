@@ -1,10 +1,21 @@
 import React from 'react'
-import { Route } from 'react-router-dom/cjs/react-router-dom.min'
+import { useState, useEffect } from 'react'
+import { useLocalStorage } from '../../useLocalStorage';
 
 const DiaryMode = () => {
-  console.log('hi')
+  const [name, setName] = useLocalStorage("name", "");
+
   return (
-    <div>itsathing</div>
+    <section>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Full name"
+        aria-label="fullname"
+      />
+      <input type="submit" value="Submit"></input>
+    </section>
   )
 }
 
