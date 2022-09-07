@@ -12,6 +12,7 @@ import DiaryMode from '../DiaryMode/DiaryMode';
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import HomeView from '../Views/HomeView/HomeView';
+import { useLocalStorage } from '../../useLocalStorage';
 const App = () => {
   const [primaryEmotions, setPrimaryEmotions] = useState([])
   const [error, setError] = useState('')
@@ -26,12 +27,12 @@ const App = () => {
     <div className='body'>
       <Header />
       <Route exact path='/'>
-        <HomeView error={error} primaryEmotions={primaryEmotions}/>
+        <HomeView error={error} primaryEmotions={primaryEmotions} />
       </Route>
-      <Route exact path='/33' render={(() =>
+      {/* <Route exact path='/33' render={(() =>
         <DiaryMode />
       )}
-      />
+      /> */}
       <Route exact path={`/feeling/:name`} render={({ match }) => {
         console.log(match)
         return (
