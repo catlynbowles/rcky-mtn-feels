@@ -9,9 +9,14 @@ const DiaryMode = ({primaryEmotions}) => {
   const [entryDescription, setEntryDescription] = useState('');
   const [entries, setEntries] =  useLocalStorage([], "");
 
-  const submitEntry = (entry) => {
-    console.log(entry)
-    setEntries([...entries, entry])
+  const submitEntry = (emotion, description) => {
+    console.log(emotion, description)
+    const newEntry = {
+      id: Date.now(),
+      emotion: emotion, 
+      description: description
+    }
+    setEntries([...entries, newEntry])
   }
 
   const handleSelect = (e) => {

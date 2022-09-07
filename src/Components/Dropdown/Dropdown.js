@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Dropdown = ({primaryEmotions, handleSelect}) => {
+const Dropdown = ({ primaryEmotions, handleSelect }) => {
   let dropdownItems = primaryEmotions.map(emotion => {
     return (
-      <option value={emotion.name}>{emotion.name}</option>
+      <option key={emotion.name} value={emotion.name}>{emotion.name}</option>
     )
   })
   return (
