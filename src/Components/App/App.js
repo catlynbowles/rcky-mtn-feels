@@ -29,10 +29,10 @@ const App = () => {
       <Route exact path='/'>
         <HomeView error={error} primaryEmotions={primaryEmotions} />
       </Route>
-      {/* <Route exact path='/33' render={(() =>
-        <DiaryMode />
+      <Route exact path='/33' render={(() =>
+        <DiaryMode primaryEmotions={primaryEmotions}/>
       )}
-      /> */}
+      />
       <Route exact path={`/feeling/:name`} render={({ match }) => {
         console.log(match)
         return (
