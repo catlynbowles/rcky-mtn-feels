@@ -5,6 +5,7 @@ import DiaryMode from '../Views/DiaryMode/DiaryMode'
 import ConnectView from '../Views/ConnectView/ConnectView';
 import LandingView from '../Views/LandingView/LandingView'
 import { getData } from '../../apiCalls';
+import Error from '../Error/Error';
 
 const Routes = () => {
   const [primaryEmotions, setPrimaryEmotions] = useState([])
@@ -33,6 +34,9 @@ const Routes = () => {
           <FeelingView id={match.params.name} />
         )
       }} />
+      <Route path="/*">
+        <Error text='invalid url'/>
+      </Route>
     </Switch>
   )
 }

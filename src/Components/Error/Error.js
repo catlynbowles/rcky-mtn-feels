@@ -1,25 +1,13 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types'
+import './Error.scss'
 
 const Error = ({text}) => {
   console.log(text)
-  const errorStyle = {
-    'color': 'white',
-    'fontSize': '20px'
-  }
-
-  const errorContainer = {
-    'display': 'flex',
-    'alignItems': 'center',
-    'textAlign': 'center',
-    'justifyContent': 'center'
-  }
-
   return (
-    <section style={errorContainer}>
-      <p className='error-text' style={errorStyle}>
-        <img src='http://i.stack.imgur.com/SBv4T.gif' height='30'/>Looks like we're having trouble loading this. ({text}) Check that your url is valid, and try another route!<img src='http://i.stack.imgur.com/SBv4T.gif' height='30'/>
+    <section className='error-container'>
+      <p className='error-text' tabIndex='0'>
+        <img src='http://i.stack.imgur.com/SBv4T.gif' height='30' tabIndex='0' className='loading-guys'/>Looks like we're having trouble loading this. ({text}) Checkout a different tab!<img src='http://i.stack.imgur.com/SBv4T.gif' height='30' className='loading-guys'/>
       </p>
     </section>
   )

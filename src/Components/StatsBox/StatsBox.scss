@@ -18,3 +18,11 @@
   font-weight: 400;
   color: black;
 }
+
+
+@media (min-width: 1000px) {
+
+  .lower {
+    display: flex;
+  }
+}

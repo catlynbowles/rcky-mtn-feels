@@ -1,0 +1,29 @@
+// const errorStyle = {
+//   'color': '$dark-brown',
+//   'fontSize': '20px'
+// }
+
+// const errorContainer = {
+//   'display': 'flex',
+//   'alignItems': 'center',
+//   'textAlign': 'center',
+//   'justifyContent': 'center'
+// }
+@import '../../Styles/variables.scss';
+
+.error-text {
+  color: $dark-brown;
+  font-size: 30px;
+  text-align: center;
+}
+
+.loading-guys {
+  height: 40px;
+  margin: 0px;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
