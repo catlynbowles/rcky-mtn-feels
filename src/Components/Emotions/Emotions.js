@@ -19,9 +19,6 @@ const Emotions = ({ primaryEmotions }) => {
   return (
     <section className='button-container'>
       {emotionalButtons}
-      <Link to='/diary'>
-        <button className='diary feelingButton'><p>Diary Mode</p></button>
-      </Link>
     </section>
   )
 }

@@ -9,7 +9,7 @@ const LandingView = () => {
 
       &emsp; The app includes several features. The ‘My Diary’ tab allows a user to capture and save an emotional feeling. The feeling remains captured until the ‘reset’ button is clicked. The ‘Connect Me’ feature allows the user to take their own emotional temperature, choosing one of the primary emotions. The user will then be navigated to a page which displays others in the MST time zone reporting feeling this same way, and also calculates the global total.<br></br><br></br>
 
-      &emsp; This app was created using React and was refactored to include the local storage feature in ‘My Diary’. As a frontend software engineer, I hope this will be one of many projects I work on that uses technology to help us connect to one another.
+      &emsp; This app was created using React and was refactored to include the local storage feature in ‘My Diary’. It relies heavily on the We Feel API, which calculates the totals displayed from tweets occuring throughout the world. As a frontend software engineer, I hope this will be one of many projects I work on that uses technology to help us connect to one another.
       </p>
     </section>
   )

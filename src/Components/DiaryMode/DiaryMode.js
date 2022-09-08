@@ -19,10 +19,16 @@ const DiaryMode = ({ primaryEmotions }) => {
       description: description
     }
     setEntries([...entries, newEntry])
+    clearEntry()
   }
 
   const handleSelect = (e) => {
     setEntryEmotion(e)
+  }
+
+  const clearEntry = () => {
+    setEntryDescription('')
+    setEntryEmotion('')
   }
 
   return (
