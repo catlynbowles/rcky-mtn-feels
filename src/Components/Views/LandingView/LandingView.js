@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingView.scss'
+import catlynPhoto from '../../../assets/CatlynB.jpeg';
 
 const LandingView = () => {
   return (
@@ -11,6 +12,15 @@ const LandingView = () => {
 
       &emsp; This app was created using React and was refactored to include the local storage feature in ‘My Diary’. It relies heavily on the We Feel API, which calculates the totals displayed from tweets occuring throughout the world. As a frontend software engineer, I hope this will be one of many projects I work on that uses technology to help us connect to one another.
       </p>
+      <div className="photo-container">
+          <img
+            data-cy="catlyn"
+            src={catlynPhoto}
+            alt="headshot of Catlyn"
+          ></img>
+          <h3>Catlyn Bowles is a lifelong resident of Colorado.</h3>
+            <a href="https://www.linkedin.com/in/catlyn-bowles/">Learn More</a>
+        </div>
     </section>
   )
 }
