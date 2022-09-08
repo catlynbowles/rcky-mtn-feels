@@ -3,13 +3,19 @@
 .stats-container {
   border: 2px solid #857e7a;
   width: 19rem;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 0;
 }
 
-@media (min-width: 758px) {
+@media (min-width: 768px) {
   .stats-container {
     width: 40rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .stats-container {
+    width: 60rem;
   }
 }
 
