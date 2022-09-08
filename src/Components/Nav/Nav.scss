@@ -1,5 +1,8 @@
+@import '../../Styles/variables.scss';
+
 .nav-link {
   text-decoration: none;
+  color: $light-yellow;
   margin: .5rem;
 }
 
@@ -8,6 +11,6 @@ nav {
   margin: 1.5rem;
   font-family: sans-serif;
   font-size: 1.5rem;
-  color: #ea4c89;
-  text-shadow: 0 0 1rem #ea4c89;
+  color: $light-yellow;
+  text-shadow: 0 0 1rem $light-yellow;
 }

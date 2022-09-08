@@ -1,3 +1,5 @@
+@import '../../../Styles/variables.scss';
+
 .stats-container {
   border: 2px solid #857e7a;
   width: 19rem;
@@ -16,8 +18,8 @@
 .home-button p {
   font-size: 1.6rem;
   line-height: 6rem;
-  color: #3fd560;
-  text-shadow: 0 0 4px #3fd560;
+  color: $forest-green;
+  text-shadow: 0 0 4px $forest-green;
 }
 
 .home-button {

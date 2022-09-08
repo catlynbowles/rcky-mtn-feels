@@ -1,0 +1,19 @@
+@import '../../Styles/variables.scss';
+
+.totals {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 2.5rem;
+  color: $dark-brown;
+  text-shadow: 0 0 2px $dark-brown;
+  font-weight: bolder;
+  margin: 0px;
+  margin-top: 15px;
+}
+
+.small-header {
+  font-size: 2rem;
+  font-weight: 400;
+  color: black;
+}

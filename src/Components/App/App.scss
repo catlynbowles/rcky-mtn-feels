@@ -1,6 +1,8 @@
+@import '../../Styles/variables.scss';
+
 html {
   height: 100vh;
-  background: antiquewhite;
+  background-color: #FEFAE0;
 }
 
 .body {
@@ -14,8 +16,8 @@ html {
   font-family: sans-serif;
   font-weight: 100;
   font-size: 40px;
-  color: #e67b46;
-  text-shadow: 0 0 4px #e67b46;
+  color: $rich-brown;
+  text-shadow: 0 0 4px $rich-brown;
 }
 
 .subtitle,

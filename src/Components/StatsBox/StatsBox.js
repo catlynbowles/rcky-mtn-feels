@@ -1,17 +1,11 @@
 import React from 'react'
-import './StatsBox.css'
+import './StatsBox.scss'
 import PropTypes from 'prop-types'
 
 const StatsBox = ({localTotals, globalTotals, secondaryEmotions}) => {
-
-  const secondStyle = {
-    'color': '#0922e4',
-    'textShadow': '0 0 4px #0922e4'
-  }
-
   const generateSecondaryEmotions = secondaryEmotions.length > 0 && secondaryEmotions.map(emotion => {
       return (
-        <p className='small-header' style={secondStyle} key={emotion.name}>{emotion.name}</p>
+        <p className='small-header' key={emotion.name}>{emotion.name}</p>
       )
     })
   

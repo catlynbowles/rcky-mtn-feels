@@ -6,21 +6,15 @@
 
   .dropdown,
   .submit {
-    height: 2rem;
+    height: 3rem;
     margin: 1rem;
+    width: 20rem;
+    font-size: 30px;
   }
-
-  .entry-text {
-    align-items: baseline;
-  }
-}
-
-.dropdown,
-.submit {
-  width: 8rem;
 }
 
 .entry-text {
-  height: 13rem;
-  width: 13rem;
+  height: 20rem;
+  width: 20rem;
+  font-size: 20px;
 }

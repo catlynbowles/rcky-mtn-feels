@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getData } from '../../../apiCalls'
 import { Link } from 'react-router-dom'
-import './FeelingView.css'
+import './FeelingView.scss'
 import LoadingIcon from '../../../LoadingIcon/LoadingIcon'
 import Error from '../../Error/Error'
 import PropTypes from 'prop-types'

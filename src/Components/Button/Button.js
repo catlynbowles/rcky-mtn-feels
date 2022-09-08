@@ -5,7 +5,7 @@ import './Button.scss'
 
 const FeelingsButton = ({ name }) => {
   return (
-    <Link exact to={`/feeling/${name}`} style={{ textDecoration: 'none' }}>
+    <Link exact='true' to={`/feeling/${name}`} style={{ textDecoration: 'none' }}>
       <div className={`${name} feelingButton`}><p>{name}</p></div>
     </Link>
   )
