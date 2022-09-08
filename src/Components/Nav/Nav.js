@@ -6,8 +6,8 @@ const Nav = () => {
   return (
     <nav>
       <Link to='/' className='nav-link'>About</Link>
-      <Link to='/diary' className='nav-link'>My Diary</Link>
-      <Link to='/connect' className='nav-link'>Connect Me</Link>
+      <Link to='/diary' className='nav-link'>Diary</Link>
+      <Link to='/connect' className='nav-link'>Connect</Link>
     </nav>
   )
 }

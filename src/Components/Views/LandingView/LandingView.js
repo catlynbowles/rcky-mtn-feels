@@ -40,10 +40,11 @@ const LandingView = () => {
       <div className="photo-container">
         <img
           data-cy="catlyn"
+          className='catlyn'
           src={catlynPhoto}
           alt="headshot of Catlyn"
         ></img>
-        <a href="https://www.linkedin.com/in/catlyn-bowles/">Connect with me!</a>
+        <a className='link' href="https://www.linkedin.com/in/catlyn-bowles/">Connect with me!</a>
       </div>
     </section>
   )
