@@ -1,8 +1,8 @@
 # Rocky Mountain Vibes
 
-<img width="1437" alt="Screen Shot 2022-08-05 at 2 33 56 PM" src="https://user-images.githubusercontent.com/98493391/183158557-1efc4309-44fe-417c-b1c4-7de195fdfdb4.png">
+<img width="1425" alt="Screen Shot 2022-09-08 at 4 23 10 PM" src="https://user-images.githubusercontent.com/98493391/189236429-b09cf3ee-1e01-4ecb-847b-0e6fe9a348dd.png">
 
-<img width="1385" alt="Screen Shot 2022-08-05 at 3 09 09 PM" src="https://user-images.githubusercontent.com/98493391/183190784-f345c942-fb6c-4049-8d1c-f47c1b174ad3.png">
+<img width="1433" alt="Screen Shot 2022-09-08 at 4 23 18 PM" src="https://user-images.githubusercontent.com/98493391/189236438-bb888193-1741-4777-976d-b231f4e32f5d.png">
 
 ## Deploy:
 - [Deployed Link](https://rcky-vibes.herokuapp.com/)
@@ -20,7 +20,9 @@
 ### Introduction
 This is an application to display the most up-to-date content regarding emotional states in the MST time zone and the world. Calculated from the We Feel API, which stores data regarding user tweets in different time zones. 
 
-https://user-images.githubusercontent.com/98493391/183189810-3d142886-187e-4bf1-b5f0-0037536e94ee.mov
+![ezgif com-gif-maker (13)](https://user-images.githubusercontent.com/98493391/189238221-70d6e094-f051-4c1b-951b-5e426a03a924.gif)
+
+
 
 ### Set Up
 1. Clone this repository.
@@ -38,11 +40,13 @@ https://user-images.githubusercontent.com/98493391/183189810-3d142886-187e-4bf1-
 - Displays seven primary emotions for the user to select.
 - User can select their current emotional state and view statistics of others feeling this way in the MST time zone and the world.
 - User can close detail window and go back to the landing page. 
+- Using local storage, user can save current emotional states. 
+- Fully tabbable sites
+- Mobile responsive design
 
 ### Future Features
 - Add playlists recommended to user based on emotional selection.
 - Find colors associated with each emotion to display upon selection.
-- Each time a user selects an emotion, post to another api to keep track of current selections happening on the site. 
 
 ### Reflection
 During this project I developed a stronger understanding of using React to generate user friendly applications while implementing Cypress, Router and CSS to display concepts that I find interesting. Researching APIs, I also learned how to navigate finding keys, using API parameters, and have a stronger conceptual understanding of how to select an API for a project.
@@ -53,7 +57,8 @@ During this project I developed a stronger understanding of using React to gener
 - JavaScript
 - HTML
 - JSX
-- CSS
+- SASS
+- Local Storage
 - API Fetch
 - Cypress
 - Heroku
