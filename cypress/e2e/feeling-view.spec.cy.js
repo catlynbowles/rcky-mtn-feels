@@ -1,16 +1,16 @@
-describe('Home Page', () => {
-  it('Should load', () => {
-    cy.visit('http://localhost:3000/love')
-    cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals', {fixture: "globalTotal"})
-    cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=love', {fixture: "localTotals"})
+describe('Feeling View Page', () => {
+    beforeEach(() => {
+      cy.visit('http://localhost:3000/feeling/love')
+      cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals', {fixture: "globalTotal"})
+      cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=love', {fixture: "localTotals"})
   })
 
   it('Should have a title', () => {
-    cy.get('h1').should('contain.text', 'Rocky Mountain VibeCheck')
+    cy.get('h1').should('contain.text', 'Rocky Mountain Vibes')
   })
 
   it('Should contain a different subtitle', () => {
-    cy.get('.small-header').should('contain.text', 'If you feel love today...You\'re not alone. There are:')
+    cy.get('.small-header').should('contain.text', 'If you feel love today, you\'re not alone. There are:')
   })
 
   it('Should contain a number and text stating the totals in the MST.', () => {
@@ -20,14 +20,14 @@ describe('Home Page', () => {
 
   it('Should contain a back button to return home.', () => {
     cy.get('.home-button').should('contain.text', 'Back').click()
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.url().should('eq', 'http://localhost:3000/connect')
   })
 
   it('Should display an error message if the global total API request fails.', () => {
     cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals', {
       statusCode: 404
     })
-    cy.visit('http://localhost:3000/love')
+    cy.visit('http://localhost:3000/feeling/love')
     cy.get('.error-text').should('contain.text', 'Looks like we\'re having trouble loading this. (Error: Not Found)')
   })
 
@@ -35,7 +35,7 @@ describe('Home Page', () => {
     cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/emotions/primary/totals', {
       statusCode: 500
     })
-    cy.visit('http://localhost:3000/love')
+    cy.visit('http://localhost:3000/feeling/love')
     cy.get('.error-text').should('contain.text', 'Looks like we\'re having trouble loading this. (Error: Internal Server Error)')
   })
 
@@ -43,7 +43,7 @@ describe('Home Page', () => {
     cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=love', {
       statusCode: 404
     })
-    cy.visit('http://localhost:3000/love')
+    cy.visit('http://localhost:3000/feeling/love')
     cy.get('.error-text').should('contain.text', 'Looks like we\'re having trouble loading this. (Error: Not Found)')
   })
 
@@ -51,7 +51,7 @@ describe('Home Page', () => {
     cy.intercept('GET', 'https://arcane-hollows-12884.herokuapp.com/https://wefeel.csiro.au/main/api/zones/continents/northAmerica/timezones/timepoints?primaryEmotion=love', {
       statusCode: 500
     })
-    cy.visit('http://localhost:3000/love')
+    cy.visit('http://localhost:3000/feeling/love')
     cy.get('.error-text').should('contain.text', 'Looks like we\'re having trouble loading this. (Error: Internal Server Error)')
   })
 

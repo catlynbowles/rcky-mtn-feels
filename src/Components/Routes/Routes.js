@@ -35,7 +35,7 @@ const Routes = () => {
         )
       }} />
       <Route path="/*">
-        <Error text='invalid url'/>
+        <Error/>
       </Route>
     </Switch>
   )
