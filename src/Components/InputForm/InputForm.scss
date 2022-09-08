@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+
+  .dropdown,
+  .submit {
+    height: 2rem;
+    margin: 1rem;
+  }
+
+  .entry-text {
+    align-items: baseline;
+  }
+}
+
+.dropdown,
+.submit {
+  width: 8rem;
+}
+
+.entry-text {
+  height: 13rem;
+  width: 13rem;
+}

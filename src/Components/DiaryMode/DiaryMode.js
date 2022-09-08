@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useLocalStorage } from '../../useLocalStorage';
 import Dropdown from '../Dropdown/Dropdown';
 import DiaryEntries from '../DiaryEntries/DiaryEntries';
+import './DiaryMode.scss'
 import InputForm from '../InputForm/InputForm';
 
 const DiaryMode = ({ primaryEmotions }) => {
@@ -25,9 +26,8 @@ const DiaryMode = ({ primaryEmotions }) => {
   }
 
   return (
-    <section>
-      <Dropdown primaryEmotions={primaryEmotions} handleSelect={handleSelect} />
-      <InputForm entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
+    <section className='form-diary'>
+      <InputForm primaryEmotions={primaryEmotions} handleSelect={handleSelect} entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
       {entries.length ? <DiaryEntries entries={entries} /> : <h3>No entries to display. Add one above!</h3>}
     </section>
   )
