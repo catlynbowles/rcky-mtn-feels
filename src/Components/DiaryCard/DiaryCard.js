@@ -7,7 +7,7 @@ const DiaryCard = ({emotion, description, id, deleteEntry}) => {
       <p className='time'>{id}</p>
       <h3 className='e-title'>{emotion}</h3>
       <p className='description'>{description}</p>
-      <button onClick={() => deleteEntry(id)}>remove memory</button>
+      <button className='delete' onClick={() => deleteEntry(id)}>remove memory</button>
     </article>
   )
 }

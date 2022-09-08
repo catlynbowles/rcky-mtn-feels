@@ -18,3 +18,19 @@
   width: 20rem;
   font-size: 20px;
 }
+
+@media (min-width: 768px) {
+  .entry-text {
+    height: 20rem;
+    width: 40rem;
+  }
+
+  .form {
+
+    .dropdown,
+    .submit {
+      height: 2rem;
+      font-size: 20px;
+    }
+  }
+}

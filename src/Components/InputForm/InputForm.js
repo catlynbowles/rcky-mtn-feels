@@ -11,7 +11,7 @@ const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDe
         type="text"
         value={entryDescription}
         onChange={(e) => setEntryDescription(e.target.value)}
-        placeholder="Describe it, where you feel it in your body, what it feels like"
+        placeholder="Describe this feeling. Where do you feel it ? What are your thoughts about it ?"
         aria-label="entry"
         required
       />
