@@ -1,7 +1,6 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useRef } from 'react'
+import { useState } from 'react'
 import { useLocalStorage } from '../../useLocalStorage';
-import Dropdown from '../Dropdown/Dropdown';
 import DiaryEntries from '../DiaryEntries/DiaryEntries';
 import './DiaryMode.scss'
 import InputForm from '../InputForm/InputForm';
@@ -10,6 +9,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   const [entryEmotion, setEntryEmotion] = useState('');
   const [entryDescription, setEntryDescription] = useState('');
   const [entries, setEntries] = useLocalStorage('', "");
+  const inputRef = useRef(null);
 
   const submitEntry = (emotion, description, e) => {
     e.preventDefault();
@@ -36,12 +36,13 @@ const DiaryMode = ({ primaryEmotions }) => {
   const clearEntry = () => {
     setEntryDescription('')
     setEntryEmotion('')
+    inputRef.current.value = 'I\'m feeling...';
   }
 
   return (
     <section className='form-diary'>
-      <InputForm primaryEmotions={primaryEmotions} handleSelect={handleSelect} entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
-      {entries.length ? <DiaryEntries entries={entries} deleteEntry={deleteEntry}/> : <h3>No entries to display. Add one above!</h3>}
+      <InputForm inputRef={inputRef} primaryEmotions={primaryEmotions} handleSelect={handleSelect} entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
+      {entries.length ? <DiaryEntries entries={entries} deleteEntry={deleteEntry} /> : <h3>No entries to display. Add one above!</h3>}
     </section>
   )
 }
