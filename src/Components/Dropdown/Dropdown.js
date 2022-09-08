@@ -7,8 +7,8 @@ const Dropdown = ({ primaryEmotions, handleSelect, inputRef }) => {
     )
   })
   return (
-    <select className='dropdown' ref={inputRef} onChange={(e) => handleSelect(e.target.value)}>
-      <option>I'm feeling...</option>
+    <select className='dropdown' ref={inputRef} onChange={(e) => handleSelect(e.target.value)} required>
+      <option value="" defaultValue={''} disable='true'>I'm feeling...</option>
       {dropdownItems}
     </select>
   )

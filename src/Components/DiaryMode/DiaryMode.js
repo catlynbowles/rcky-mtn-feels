@@ -36,7 +36,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   const clearEntry = () => {
     setEntryDescription('')
     setEntryEmotion('')
-    inputRef.current.value = 'I\'m feeling...';
+    inputRef.current.value = '';
   }
 
   return (
