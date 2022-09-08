@@ -7,8 +7,12 @@ import moon from '../../assets/19.png'
 
 const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDescription, submitEntry, entryEmotion, inputRef }) => {
   return (
-    <form className='form' onSubmit={(e) => submitEntry(entryEmotion, entryDescription, e)}>
-      <img src={compass} height='100' />
+    <form className='form' onSubmit={(e) => submitEntry(entryEmotion, entryDescription, e)}> 
+      <div className='sub-container'>
+        <img src={compass} height='100' alt='compass' tabIndex='0'/>
+        <h3 className='subtitle' tabIndex='0'>Capture an Emotion</h3>
+        <img src={moon} height='100' alt='moon picture' tabIndex='0'/>
+      </div>
       <Dropdown className='dropdown' primaryEmotions={primaryEmotions} handleSelect={handleSelect} inputRef={inputRef} />
       <textarea
         className='entry-text'
@@ -20,7 +24,6 @@ const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDe
         required
       />
       <input className='submit' type="submit" value="Submit" ></input>
-      <img src={moon} height='100' />
     </form>
   )
 }

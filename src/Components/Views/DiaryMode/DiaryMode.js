@@ -42,7 +42,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   return (
     <section className='form-diary'>
       <InputForm inputRef={inputRef} primaryEmotions={primaryEmotions} handleSelect={handleSelect} entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
-      {entries.length ? <DiaryEntries entries={entries} deleteEntry={deleteEntry} /> : <h3 className='empty-display'>No entries to display. Add one above!</h3>}
+      {entries.length ? <DiaryEntries entries={entries} deleteEntry={deleteEntry} /> : <h3 className='empty-display' tabIndex='0'>No entries to display. Add one above!</h3>}
     </section>
   )
 }

@@ -7,12 +7,12 @@ import mtnPhoto from '../../../assets/9.png';
 const LandingView = () => {
   return (
     <section className='about-section'>
-      <h1 className='about-title'>About Rocky Mountain Vibes</h1>
+      <h1 className='about-title' tabIndex='0'>About Rocky Mountain Vibes</h1>
       <div className='photo-text-container'>
-        <img src={tentPhoto} height='500' />
+        <img src={tentPhoto} height='500' tabIndex='0' alt='geometric mountain design with a tent' />
         <div className='text-container'>
-          <h3>The Mission</h3>
-          <p className='about-description'>
+          <h3 tabIndex='0'>The Mission</h3>
+          <p className='about-description' tabIndex='0'>
             &emsp; The purpose of this project is to create a tool that helps us
             celebrate our own emotional capacity with others.
             At times, it’s too easy to feel intense emotions in isolation,
@@ -26,8 +26,8 @@ const LandingView = () => {
       </div>
       <div className='photo-text-container'>
         <div className='text-container'>
-          <h3>Features</h3>
-          <p className='about-description'>&emsp; The app includes several features.
+          <h3 tabIndex='0'>Features</h3>
+          <p className='about-description' tabIndex='0'>&emsp; The app includes several features.
             The ‘Diary’ tab allows a user to capture and save an emotional feeling.
             The feeling remains captured until one is removed.
             The ‘Connect’ feature allows the user to take their own emotional temperature,
@@ -35,7 +35,7 @@ const LandingView = () => {
             which displays others in the MST time zone reporting feeling this same way,
             and also calculates the global total.</p>
         </div>
-        <img src={mtnPhoto} height='500' />
+        <img src={mtnPhoto} height='500' alt='geometric tree design' tabIndex='0'/>
       </div>
       <div className="photo-container">
         <img
@@ -43,6 +43,7 @@ const LandingView = () => {
           className='catlyn'
           src={catlynPhoto}
           alt="headshot of Catlyn"
+          tabIndex='0'
         ></img>
         <a className='link' href="https://www.linkedin.com/in/catlyn-bowles/">Connect with me!</a>
       </div>

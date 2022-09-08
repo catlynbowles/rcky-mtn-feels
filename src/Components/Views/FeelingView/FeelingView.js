@@ -31,7 +31,7 @@ const FeelingView = ({ id }) => {
   return (
     <section className='page-container'>
       <article className='stats-container'>
-        <h2 className='small-header'>If you feel {id} today, you're not alone. There are:</h2>
+        <h2 className='small-header' tabIndex='0'>If you feel {id} today, you're not alone. There are:</h2>
         {error ? <Error text={error} /> :
           !localTotals && !globalTotals ? <LoadingIcon /> :
             <div>

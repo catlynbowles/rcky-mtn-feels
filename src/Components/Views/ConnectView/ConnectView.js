@@ -13,9 +13,9 @@ const ConnectView = ({ error, primaryEmotions }) => {
     <section className='emotions-cont'>
       {error ? <Error text={error} /> : !primaryEmotions.length ? <LoadingIcon /> : <Emotions primaryEmotions={primaryEmotions} />}
       <div className="img-container">
-        <img className='mtns' src={mtns} height='200' />
-        <img className='fire' src={fire} height='200' />
-        <img className='mtns-2' src={mtnss} height='200' />
+        <img className='mtns' src={mtns} height='200' alt='mountain range' tabIndex='0'/>
+        <img className='fire' src={fire} height='200' alt='cozy bonfire' tabIndex='0'/>
+        <img className='mtns-2' src={mtnss} height='200' alt='mountain range' tabIndex='0'/>
       </div>
     </section>
   )
