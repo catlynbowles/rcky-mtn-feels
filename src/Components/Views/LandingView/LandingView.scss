@@ -1,22 +1,28 @@
+@import '../../../Styles/variables.scss';
+
 .about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   .about-title {
     margin: 2rem;
-    color: seagreen;
-    text-shadow: 0 0 1rem seagreen;
+    color: $ocean-blue;
+    text-shadow: 0 0 1rem $ocean-blue;
     font-size: 2.5rem;
     text-align: center;
   }
 
   .about-description {
     font-size: large;
-    color: saddlebrown;
+    color: $dark-brown;
     font-weight: bold;
     font-size: 1.6rem;
     padding: 1rem;
-    text-shadow: 0 0 2rem saddlebrown;
+    border: 2px solid $ocean-blue;
+    width: 80%;
   }
 }
 
-@media (min-width: 768px) {
-  
-}
+@media (min-width: 768px) {}

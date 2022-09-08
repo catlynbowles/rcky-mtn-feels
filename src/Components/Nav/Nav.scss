@@ -14,3 +14,9 @@ nav {
   color: $light-yellow;
   text-shadow: 0 0 1rem $light-yellow;
 }
+
+@media (min-width: 768px) {
+  .nav-link {
+    margin: 1rem;
+  }
+}

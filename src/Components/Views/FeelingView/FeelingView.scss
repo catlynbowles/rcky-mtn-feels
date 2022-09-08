@@ -7,6 +7,12 @@
   margin-top: 0;
 }
 
+@media (min-width: 758px) {
+  .stats-container {
+    width: 40rem;
+  }
+}
+
 .page-container {
   margin: 2rem;
   display: flex;

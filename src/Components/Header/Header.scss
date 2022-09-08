@@ -22,3 +22,8 @@
   background-color: $forest-green;
 }
 
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+}
