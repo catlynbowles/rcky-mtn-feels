@@ -9,9 +9,10 @@ import InputForm from '../InputForm/InputForm';
 const DiaryMode = ({ primaryEmotions }) => {
   const [entryEmotion, setEntryEmotion] = useState('');
   const [entryDescription, setEntryDescription] = useState('');
-  const [entries, setEntries] = useLocalStorage([], "");
+  const [entries, setEntries] = useLocalStorage('', "");
 
-  const submitEntry = (emotion, description) => {
+  const submitEntry = (emotion, description, e) => {
+    e.preventDefault();
     console.log(emotion, description)
     const newEntry = {
       id: Date().toLocaleString().substr(0, 24),
@@ -20,6 +21,12 @@ const DiaryMode = ({ primaryEmotions }) => {
     }
     setEntries([...entries, newEntry])
     clearEntry()
+  }
+
+  const deleteEntry = (id) => {
+    console.log(id)
+    const filteredEntries = entries.filter(entry => entry.id !== id)
+    setEntries(filteredEntries)
   }
 
   const handleSelect = (e) => {
@@ -34,7 +41,7 @@ const DiaryMode = ({ primaryEmotions }) => {
   return (
     <section className='form-diary'>
       <InputForm primaryEmotions={primaryEmotions} handleSelect={handleSelect} entryDescription={entryDescription} setEntryDescription={setEntryDescription} submitEntry={submitEntry} entryEmotion={entryEmotion} />
-      {entries.length ? <DiaryEntries entries={entries} /> : <h3>No entries to display. Add one above!</h3>}
+      {entries.length ? <DiaryEntries entries={entries} deleteEntry={deleteEntry}/> : <h3>No entries to display. Add one above!</h3>}
     </section>
   )
 }

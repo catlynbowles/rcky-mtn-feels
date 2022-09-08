@@ -14,7 +14,7 @@ const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDe
         placeholder="Describe it, where you feel it in your body, what it feels like"
         aria-label="entry"
       />
-      <input className='submit' type="submit" value="Submit" onClick={() => submitEntry(entryEmotion, entryDescription)}></input>
+      <input className='submit' type="submit" value="Submit" onClick={(e) => submitEntry(entryEmotion, entryDescription, e)}></input>
     </form>
   )
 }

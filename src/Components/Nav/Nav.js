@@ -5,9 +5,9 @@ import './Nav.scss'
 const Nav = () => {
   return (
     <nav>
-      <Link exact to='/' className='nav-link'>About</Link>
-      <Link exact to='/diary' className='nav-link'>My Diary</Link>
-      <Link exact to='/connect' className='nav-link'>Connect Me</Link>
+      <Link to='/' className='nav-link'>About</Link>
+      <Link to='/diary' className='nav-link'>My Diary</Link>
+      <Link to='/connect' className='nav-link'>Connect Me</Link>
     </nav>
   )
 }
