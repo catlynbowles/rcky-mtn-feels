@@ -2,18 +2,19 @@
 
 .nav-link {
   text-decoration: none;
-  color: $light-yellow;
+  color: black;
   margin: .5rem;
-  font-family: 'Combo', cursive;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
 }
 
 nav {
   text-align: center;
   margin: 1.5rem;
   font-family: sans-serif;
-  font-size: 1.5rem;
-  color: $light-yellow;
-  text-shadow: 0 0 1rem $light-yellow;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 0 0 1rem black;
 }
 
 @media (min-width: 768px) {

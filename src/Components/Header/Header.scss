@@ -4,8 +4,8 @@
   font-family: sans-serif;
   text-align: center;
   font-size: 2.8rem;
-  color: $light-yellow;
-  text-shadow: 0 0 .3rem $light-yellow;
+  color: $dark-brown;
+  text-shadow: 0 0 .3rem $dark-brown;
   margin: 0;
   padding: 1rem;
   display: flex;
@@ -22,7 +22,11 @@
 
 .header {
   height: 13rem;
-  background-color: $forest-green;
+  width: 100%;
+  background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   img {
     display: none;
@@ -47,7 +51,7 @@
 
     img {
       display: initial;
-      filter: invert(90%) sepia(14%) saturate(1054%) hue-rotate(330deg) brightness(100%) contrast(89%);
+      // filter: invert(90%) sepia(14%) saturate(1054%) hue-rotate(330deg) brightness(100%) contrast(89%);
     }
   }
 }
