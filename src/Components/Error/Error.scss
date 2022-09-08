@@ -1,0 +1,21 @@
+@import '../../Styles/variables.scss';
+
+.error-text {
+  color: $dark-brown;
+  font-size: 30px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  max-width: 60%;
+}
+
+.loading-guys {
+  height: 40px;
+  margin: 0px;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

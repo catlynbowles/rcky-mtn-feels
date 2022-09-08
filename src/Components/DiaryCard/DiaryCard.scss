@@ -1,0 +1,19 @@
+@import '../../Styles/variables.scss';
+
+.diary-cards {
+  text-align: center;
+  box-shadow: 0 0 8px #13090d, inset 0 0 8px #1a0b11;
+  -webkit-animation: pulse 2s linear 1s infinite;
+  margin: 2rem;
+  color: black;
+  padding: 1rem;
+  width: 15rem;
+  font-size: 1.8rem;
+  min-width: 15rem;
+}
+
+.delete {
+  height: 2.5rem;
+}
+
+@media (min-width: 768px) {}

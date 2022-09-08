@@ -1,15 +1,11 @@
-import { render } from '@testing-library/react'
 import React, { useState, useEffect } from 'react'
 import { getData } from '../../../apiCalls'
 import { Link } from 'react-router-dom'
-import './FeelingView.css'
-// import '../Button/Button.css'
+import './FeelingView.scss'
 import LoadingIcon from '../../../LoadingIcon/LoadingIcon'
 import Error from '../../Error/Error'
 import PropTypes from 'prop-types'
-import ViewSubtitle from '../../ViewSubtitle/ViewSubtitle'
 import StatsBox from '../../StatsBox/StatsBox'
-import Footer from '../../Footer/Footer'
 
 
 const FeelingView = ({ id }) => {
@@ -35,7 +31,7 @@ const FeelingView = ({ id }) => {
   return (
     <section className='page-container'>
       <article className='stats-container'>
-        <ViewSubtitle id={id} />
+        <h2 className='small-header' tabIndex='0'>If you feel {id} today, you're not alone. There are:</h2>
         {error ? <Error text={error} /> :
           !localTotals && !globalTotals ? <LoadingIcon /> :
             <div>
@@ -43,7 +39,7 @@ const FeelingView = ({ id }) => {
             </div>
         }
       </article>
-      <Link to='/' style={{ textDecoration: 'none' }}>
+      <Link to='/connect' style={{ textDecoration: 'none' }}>
         <div className='feelingButton home-button'><p>Back</p></div>
       </Link>
 

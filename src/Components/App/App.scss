@@ -1,9 +1,13 @@
+@import '../../Styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Combo&display=swap');
+
 html {
   height: 100vh;
-  background: #1f1f1f;
+  background-color: #FEFAE0;
 }
 
-.body {
+body {
+  font-family: 'Combo', cursive;
   width: 100%;
   height: 100%;
 }
@@ -11,10 +15,14 @@ html {
 .subtitle,
 .line,
 .subline {
-  text-align: center;
   font-family: sans-serif;
   font-weight: 100;
   font-size: 40px;
-  color: #e67b46;
-  text-shadow: 0 0 4px #e67b46;
+  color: $rich-brown;
+  text-shadow: 0 0 4px $rich-brown;
+}
+
+.subtitle,
+.subline {
+  text-align: center;
 }

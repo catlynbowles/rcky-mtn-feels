@@ -1,85 +1,36 @@
+@import '../../Styles/variables.scss';
+
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+    box-shadow: 0 0 8px $forest-green, inset 0 0 8px $forest-green;
   }
 
   50% {
-    box-shadow: 0 0 16px #f1b5cc, inset 0 0 14px #f1b5cc;
+    box-shadow: 0 0 16px $sage-green, inset 0 0 14px $sage-green;
   }
 
   100% {
-    box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+    box-shadow: 0 0 8px $forest-green, inset 0 0 8px $forest-green;
   }
 }
 
 .feelingButton {
   background-color: transparent;
-  width: 8.5rem;
-  height: 8.5rem;
-  border-radius: 75px;
-  box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 12rem;
+  box-shadow: 0 0 8px$light-brown, inset 0 0 8px$light-brown;
   -webkit-animation: pulse 2s linear 1s infinite;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .feelingButton p {
   display: block;
   text-align: center;
-  line-height: 120px;
+  line-height: 10rem;
   font-family: sans-serif;
-
-  font-size: 24px;
-  color: #ea4c89;
-  text-shadow: 0 0 4px #ea4c89;
-}
-
-.joy p {
-  color: #eaea4c;
-  text-shadow: 0 0 4px #eaea4c;
-}
-
-.sadness p {
-  color: #827aca;
-  text-shadow: 0 0 4px #827aca;
-}
-
-.fear p {
-  color: #7aca8b;
-  text-shadow: 0 0 4px #7aca8b;
-}
-
-.anger p {
-  color: #ed5362;
-  text-shadow: 0 0 4px #ed5362;
-}
-
-.surprise p {
-  color: #5eedeb;
-  text-shadow: 0 0 4px #5eedeb;
-}
-
-.other p {
-  color: #e7e1da;
-  text-shadow: 0 0 4px #e7e1da;
-}
-
-.diary {
-  border-radius: 0px;
-  width: 12.8rem;
-  height: 10rem;
-  p {
-    font-size: 3rem;
-    color: white;
-    line-height: 3rem;
-    padding: 2rem;
-    margin: 0;
-  }
-}
-
-.diary p {
-  font-size: 3rem;
-  color: white;
-  line-height: 3rem;
-  padding: 2rem;
-  margin: 0;
+  font-size: 2.7rem;
+  color: $dark-brown;
+  text-shadow: 0 0 2px $dark-brown;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

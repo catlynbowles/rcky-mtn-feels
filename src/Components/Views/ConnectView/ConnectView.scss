@@ -1,0 +1,30 @@
+.emotions-cont {
+  .img-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mtns,
+  .mtns-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .emotions-cont {
+
+    .mtns {
+      display: initial;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .emotions-cont {
+
+    .mtns,
+    .mtns-2 {
+      display: initial;
+    }
+  }
+}

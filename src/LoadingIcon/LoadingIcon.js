@@ -2,8 +2,8 @@ import React from 'react'
 
 const LoadingIcon = () => {
   const fontStyle = {
-    'color': 'white',
-    'fontSize': '15px',
+    'color': 'black',
+    'fontSize': '30px',
   }
 
   const loadingContainer = {

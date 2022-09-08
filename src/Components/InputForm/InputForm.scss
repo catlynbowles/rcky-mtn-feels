@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+
+  .dropdown,
+  .submit {
+    height: 3rem;
+    margin: 1rem;
+    width: 20rem;
+    font-size: 40px;
+  }
+
+  input {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  img {
+    margin: 1rem;
+  }
+}
+
+.entry-text {
+  height: 20rem;
+  width: 20rem;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: row;
+  img {
+    display: none
+  }
+}
+
+@media (min-width: 768px) {
+  .entry-text {
+    height: 17rem;
+    width: 40rem;
+  }
+  .sub-container {
+    img {
+      display: initial;
+    }
+  }
+  .form {
+
+    .dropdown,
+    .submit {
+      height: 2rem;
+      font-size: 20px;
+    }
+  }
+}

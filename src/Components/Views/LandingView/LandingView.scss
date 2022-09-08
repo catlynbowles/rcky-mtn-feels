@@ -1,0 +1,63 @@
+@import '../../../Styles/variables.scss';
+
+.about-section,
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .about-title,
+  h3 {
+    margin: 2rem;
+    color: $ocean-blue;
+    text-shadow: 0 0 1rem $ocean-blue;
+    font-size: 2.5rem;
+    text-align: center;
+    color: $rich-brown;
+    text-shadow: 0 0 1rem $rich-brown;
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
+  .about-description {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: $dark-brown;
+    font-size: 1.9rem;
+  }
+
+  h1 {
+    margin: 1rem;
+    font-size: 2.5rem;
+    color: $ocean-blue;
+  }
+}
+
+.photo-text-container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  text-align: center;
+}
+
+img,
+.link {
+  margin: 2rem;
+}
+
+.catlyn {
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .photo-text-container {
+    flex-direction: row;
+  }
+}

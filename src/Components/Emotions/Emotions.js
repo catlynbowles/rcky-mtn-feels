@@ -1,9 +1,7 @@
-import { render } from '@testing-library/react';
 import React from 'react'
 import FeelingsButton from '../Button/Button'
 import './Emotions.scss'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
 
 const Emotions = ({ primaryEmotions }) => {
   const emotionalButtons = primaryEmotions.map(emotion => {
@@ -16,17 +14,13 @@ const Emotions = ({ primaryEmotions }) => {
     )
   })
 
-  const diaryStyle = {
-    "color": 'white',
-  }
-
   return (
-    <section className='button-container'>
-      {emotionalButtons}
-      <Link to='/33'>
-        <button className='diary feelingButton'><p>Diary Mode</p></button>
-      </Link>
-    </section>
+    <div>
+      <h1 className='subtitle'>What are you feeling today? </h1>
+      <section className='button-container'>
+        {emotionalButtons}
+      </section>
+    </div>
   )
 }
 
