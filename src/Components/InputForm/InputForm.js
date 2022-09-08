@@ -1,11 +1,15 @@
 import React from 'react';
 import './InputForm.scss'
 import Dropdown from '../Dropdown/Dropdown';
+import compass from '../../assets/22.png'
+import moon from '../../assets/19.png'
+
 
 const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDescription, submitEntry, entryEmotion, inputRef }) => {
   return (
     <form className='form' onSubmit={(e) => submitEntry(entryEmotion, entryDescription, e)}>
-      <Dropdown className='dropdown' primaryEmotions={primaryEmotions} handleSelect={handleSelect} inputRef={inputRef}/>
+      <img src={compass} height='100' />
+      <Dropdown className='dropdown' primaryEmotions={primaryEmotions} handleSelect={handleSelect} inputRef={inputRef} />
       <textarea
         className='entry-text'
         type="text"
@@ -16,6 +20,7 @@ const InputForm = ({ primaryEmotions, handleSelect, entryDescription, setEntryDe
         required
       />
       <input className='submit' type="submit" value="Submit" ></input>
+      <img src={moon} height='100' />
     </form>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import './Dropdown.scss'
 
 const Dropdown = ({ primaryEmotions, handleSelect, inputRef }) => {
   let dropdownItems = primaryEmotions.map(emotion => {

@@ -10,6 +10,7 @@
   padding: 1rem;
   display: flex;
   align-items: center;
+  font-family: 'Combo', cursive;
 }
 
 .line {
@@ -37,6 +38,7 @@
   .header {
     display: flex;
     align-items: flex-end;
+    height: 12rem;
 
     .together {
       display: flex;

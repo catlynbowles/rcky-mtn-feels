@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom'
 import FeelingView from '../Views/FeelingView/FeelingView'
-import DiaryMode from '../DiaryMode/DiaryMode'
+import DiaryMode from '../Views/DiaryMode/DiaryMode'
 import ConnectView from '../Views/ConnectView/ConnectView';
 import LandingView from '../Views/LandingView/LandingView'
 import { getData } from '../../apiCalls';

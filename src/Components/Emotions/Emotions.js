@@ -1,9 +1,7 @@
-import { render } from '@testing-library/react';
 import React from 'react'
 import FeelingsButton from '../Button/Button'
 import './Emotions.scss'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom';
 
 const Emotions = ({ primaryEmotions }) => {
   const emotionalButtons = primaryEmotions.map(emotion => {
@@ -17,9 +15,12 @@ const Emotions = ({ primaryEmotions }) => {
   })
 
   return (
-    <section className='button-container'>
-      {emotionalButtons}
-    </section>
+    <div>
+      <h1 className='subtitle'>What are you feeling today? </h1>
+      <section className='button-container'>
+        {emotionalButtons}
+      </section>
+    </div>
   )
 }
 

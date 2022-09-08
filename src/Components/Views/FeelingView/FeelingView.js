@@ -5,7 +5,6 @@ import './FeelingView.scss'
 import LoadingIcon from '../../../LoadingIcon/LoadingIcon'
 import Error from '../../Error/Error'
 import PropTypes from 'prop-types'
-import ViewSubtitle from '../../ViewSubtitle/ViewSubtitle'
 import StatsBox from '../../StatsBox/StatsBox'
 
 
@@ -32,7 +31,7 @@ const FeelingView = ({ id }) => {
   return (
     <section className='page-container'>
       <article className='stats-container'>
-        <ViewSubtitle id={id} />
+        <h2 className='small-header'>If you feel {id} today, you're not alone. There are:</h2>
         {error ? <Error text={error} /> :
           !localTotals && !globalTotals ? <LoadingIcon /> :
             <div>

@@ -18,7 +18,7 @@ const LandingView = () => {
             At times, it’s too easy to feel intense emotions in isolation,
             promoting the false association that we are alone in feeling.
             The truth, however, is that we are never alone. This app helps the user build that connection.
-            This app was created using React and was refactored to include the local storage feature in ‘My Diary’.
+            This app was created using React and was refactored to include the local storage feature in ‘Diary’.
             It relies heavily on the We Feel API, which calculates the totals displayed from tweets occuring throughout the world.
             As a frontend software engineer, I hope this will be one of many projects I work on that uses technology to help us connect to one another.
           </p>
@@ -28,9 +28,9 @@ const LandingView = () => {
         <div className='text-container'>
           <h3>Features</h3>
           <p className='about-description'>&emsp; The app includes several features.
-            The ‘My Diary’ tab allows a user to capture and save an emotional feeling.
-            The feeling remains captured until the ‘reset’ button is clicked.
-            The ‘Connect Me’ feature allows the user to take their own emotional temperature,
+            The ‘Diary’ tab allows a user to capture and save an emotional feeling.
+            The feeling remains captured until one is removed.
+            The ‘Connect’ feature allows the user to take their own emotional temperature,
             choosing one of the primary emotions. The user will then be navigated to a page
             which displays others in the MST time zone reporting feeling this same way,
             and also calculates the global total.</p>

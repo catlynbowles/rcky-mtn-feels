@@ -3,6 +3,7 @@ import './Header.scss'
 import Nav from '../Nav/Nav'
 import backpack from '../../assets/20.png'
 import lantern from '../../assets/23.png'
+import '../../Styles/variables.scss'
 
 const Header = () => {
   return (

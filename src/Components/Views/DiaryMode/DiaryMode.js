@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { useState } from 'react'
-import { useLocalStorage } from '../../useLocalStorage';
-import DiaryEntries from '../DiaryEntries/DiaryEntries';
+import { useLocalStorage } from '../../../useLocalStorage'
+import DiaryEntries from '../../DiaryEntries/DiaryEntries';
 import './DiaryMode.scss'
-import InputForm from '../InputForm/InputForm';
+import InputForm from '../../InputForm/InputForm';
 
 const DiaryMode = ({ primaryEmotions }) => {
   const [entryEmotion, setEntryEmotion] = useState('');

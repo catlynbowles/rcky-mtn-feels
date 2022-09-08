@@ -1,15 +1,14 @@
 import './App.scss';
-import { getData } from '../../apiCalls'
+import '../../Styles/variables.scss'
 import Header from '../Header/Header';
-import { useState, useEffect } from 'react'
 import Routes from '../Routes/Routes';
 
 const App = () => {
   return (
-    <main className='main'>
+    <body className='main'>
       <Header />
       <Routes />
-    </main>
+    </body>
   )
 }
 

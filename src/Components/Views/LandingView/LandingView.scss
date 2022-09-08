@@ -14,24 +14,23 @@
     text-shadow: 0 0 1rem $ocean-blue;
     font-size: 2.5rem;
     text-align: center;
-  }
-
-  h3 {
     color: $rich-brown;
     text-shadow: 0 0 1rem $rich-brown;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 1rem;
   }
 
-  .about-description,
-  .about-last {
-    font-size: large;
+  .about-description {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     color: $dark-brown;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
 
   h1 {
     margin: 1rem;
+    font-size: 2.5rem;
+    color: $ocean-blue;
   }
 }
 

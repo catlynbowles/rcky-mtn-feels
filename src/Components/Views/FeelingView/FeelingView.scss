@@ -7,18 +7,6 @@
   margin-top: 0;
 }
 
-@media (min-width: 768px) {
-  .stats-container {
-    width: 40rem;
-  }
-}
-
-@media (min-width: 1000px) {
-  .stats-container {
-    width: 60rem;
-  }
-}
-
 .page-container {
   margin: 2rem;
   display: flex;
@@ -37,4 +25,28 @@
 .home-button {
   width: 6rem;
   height: 6rem;
+}
+
+.small-header {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.6rem;
+  color: #857e7a;
+  text-shadow: 0 0 4px #857e7a;
+  margin: 0px;
+  margin-top: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .stats-container {
+    width: 60rem;
+  }
 }
