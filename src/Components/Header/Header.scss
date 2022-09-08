@@ -45,6 +45,7 @@
 
     img {
       display: initial;
+      filter: invert(90%) sepia(14%) saturate(1054%) hue-rotate(330deg) brightness(100%) contrast(89%);
     }
   }
 }
