@@ -9,6 +9,7 @@ import { getData } from "../../apiCalls";
 import Header from "../Header/Header";
 import Subtitle from "../Subtitle/Subtitle";
 import { useState, useEffect } from "react";
+import FeelingSelection from "../FeelingSelection/FeelingSelection";
 
 const Homepage = () => {
   const [primaryEmotions, setPrimaryEmotions] = useState([]);
@@ -33,6 +34,7 @@ const Homepage = () => {
   return (
     <body className="body">
       <Header />
+      <FeelingSelection />
       {/* <Route
         exact
         path="/"
