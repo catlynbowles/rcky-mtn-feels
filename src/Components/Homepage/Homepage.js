@@ -11,11 +11,7 @@ const Homepage = () => {
   return (
     <body className="body">
       <Header />
-      <Route
-        exact
-        path="/"
-        render={() => <FeelingSelection />}
-      />
+      <Route exact path="/" render={() => <FeelingSelection />} />
       <Route
         path={`/feeling/:name`}
         render={({ match }) => {

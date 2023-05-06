@@ -1,0 +1,25 @@
+.postcard-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sentence {
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transition: opacity 1s, visibility 1s;
+  visibility: hidden;
+}
+
+.postcard-wrapper:hover .sentence {
+  visibility: visible;
+  opacity: 1;
+}
+
+.postcard-wrapper:hover .postcard {
+  opacity: 35%;
+  transition: opacity 1s, visibility 1s;
+}

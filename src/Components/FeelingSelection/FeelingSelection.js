@@ -25,7 +25,12 @@ const FeelingSelection = () => {
     );
   });
 
-  return <section className="button-container">{emotionalButtons}</section>;
+  return (
+    <section>
+      <h2 className="subtitle">I feel</h2>
+      <div className="button-container">{emotionalButtons}</div>
+    </section>
+  );
 };
 
 export default FeelingSelection;

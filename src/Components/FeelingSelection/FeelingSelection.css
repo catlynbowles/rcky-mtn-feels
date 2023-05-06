@@ -7,6 +7,12 @@
   flex-wrap: wrap;
 }
 
+.subtitle {
+  color: white;
+  font-weight: 300;
+  text-shadow: 0 0 4px white;
+}
+
 @media (max-width: 600px) {
   .button-container {
     flex-direction: column;

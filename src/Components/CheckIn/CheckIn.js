@@ -4,29 +4,50 @@ import { Link } from "react-router-dom";
 import "./CheckIn.css";
 import "../Button/Button.css";
 import PropTypes from "prop-types";
+import Gallery from "../Gallery/Gallery";
 
 const CheckIn = ({ userFeeling }) => {
   const [error, setError] = useState(null);
-
-  const formFullImage = (postdate, imageId, imageSize) => {
-    let imgpath = `http://images.wefeelfine.org/data/images/`;
-    imgpath += postdate.replaceAll("-", "/");
-    imgpath += "/" + imageId;
-    if (imageSize == "thumb") {
-      imgpath += "_thumb.jpg";
-    } else imgpath += "_full.jpg";
-    return imgpath;
-  };
+  const [postcards, setPostcards] = useState([]);
 
   useEffect(() => {
-    console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
-    getData(
-      // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
-    ).then((data) => console.log(data));
+    // console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
+    getData().then((data) => setPostcards(data));
+    // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
   }, []);
 
   return (
     <section className="page-container">
+      <h2 className="subtitle">you're not alone</h2>
+      <Gallery
+        postcards={[
+          {
+            sentence: "hi",
+            postdate: "2013-12-05",
+            imageid: "TUWCM9I9sPSgGc89XgvLmw",
+          },
+          {
+            sentence: "hi",
+            postdate: "2013-12-05",
+            imageid: "TUWCM9I9sPSgGc89XgvLmw",
+          },
+          {
+            sentence: "hi",
+            postdate: "2013-12-05",
+            imageid: "TUWCM9I9sPSgGc89XgvLmw",
+          },
+          {
+            sentence: "hi",
+            postdate: "2013-12-05",
+            imageid: "TUWCM9I9sPSgGc89XgvLmw",
+          },
+          {
+            sentence: "hi",
+            postdate: "2013-12-05",
+            imageid: "TUWCM9I9sPSgGc89XgvLmw",
+          },
+        ]}
+      />
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="feelingButton home-button">
           <p>Back</p>
