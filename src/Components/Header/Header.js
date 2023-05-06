@@ -5,9 +5,13 @@ const Header = () => {
   return (
     <header>
       <h1 className="title">☆・゜Vibe Check ゜・☆</h1>
-      <p className="line">
-        *・゜・*:.。.*.。.:*・ç・*:.。.*.。.:*・☆・゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜・*:.。.*.。.:*・゜・*
-      </p>
+      <span className="line">
+        <span className="end">*・゜・*:.。.*.。.:*・ç・*:.。.*.。.:*・☆・</span>
+        <span className="middle">
+          ゜・*:.。.*.。.:*・☆・゜・*:.。.:*・☆・゜
+        </span>
+        <span className="end">*・゜・*:.。.*.。.:*・ç・*:.。.*.。.:*・☆・</span>
+      </span>
     </header>
   );
 };

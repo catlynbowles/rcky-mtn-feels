@@ -9,14 +9,20 @@ const primaryEmotions = [
   { name: "fear", color: "#7aca8b" },
   { name: "anger", color: "#ed5362" },
   { name: "surprise", color: "#5eedeb" },
-  { name: "disgust", color: "#e7e1da" },
+  { name: "disgust", color: "#0000FF" },
   { name: "love", color: "#ea4c89" },
 ];
 
 const FeelingSelection = () => {
-
   const emotionalButtons = primaryEmotions.map((emotion) => {
-    return <Button id={emotion.name} key={emotion.name} name={emotion.name} color={emotion.color}/>;
+    return (
+      <Button
+        id={emotion.name}
+        key={emotion.name}
+        name={emotion.name}
+        color={emotion.color}
+      />
+    );
   });
 
   return <section className="button-container">{emotionalButtons}</section>;

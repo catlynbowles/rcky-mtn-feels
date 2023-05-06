@@ -12,9 +12,9 @@
 
 .feelingButton {
   background-color: transparent;
-  width: 120px;
-  height: 120px;
-  border-radius: 75px;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
   box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
   -webkit-animation: pulse 5s linear 1s infinite;
   margin: 1em;
@@ -23,7 +23,7 @@
 .feelingButton p {
   display: block;
   text-align: center;
-  line-height: 120px;
+  line-height: 9rem;
   font-family: sans-serif;
   font-weight: 100;
   font-size: 24px;
