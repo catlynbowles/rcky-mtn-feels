@@ -6,7 +6,9 @@ import "../Button/Button.css";
 import PropTypes from "prop-types";
 
 const CheckIn = ({ id }) => {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <section className="page-container">

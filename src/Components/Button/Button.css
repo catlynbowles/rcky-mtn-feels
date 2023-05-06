@@ -1,7 +1,13 @@
 @keyframes pulse {
-  0% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
-  50% { box-shadow:0 0 16px #f1b5cc, inset 0 0 14px #f1b5cc; }
-  100% { box-shadow:0 0 8px #ea4c89, inset 0 0 8px #ea4c89; }
+  0% {
+    box-shadow: 0 0 8px var(--pulseColor), inset 0 0 8px var(--pulseColor);
+  }
+  50% {
+    box-shadow: 0 0 16px gray, inset 0 0 14px gray;
+  }
+  100% {
+    box-shadow: 0 0 8px var(--pulseColor), inset 0 0 8px var(--pulseColor);
+  }
 }
 
 .feelingButton {
@@ -10,7 +16,7 @@
   height: 120px;
   border-radius: 75px;
   box-shadow: 0 0 8px #ea4c89, inset 0 0 8px #ea4c89;
-  -webkit-animation: pulse 2s linear 1s infinite;
+  -webkit-animation: pulse 5s linear 1s infinite;
   margin: 1em;
 }
 
@@ -21,37 +27,4 @@
   font-family: sans-serif;
   font-weight: 100;
   font-size: 24px;
-  color: #ea4c89;
-  text-shadow: 0 0 4px #ea4c89;
 }
-
-.joy p {
-  color: #eaea4c;
-  text-shadow: 0 0 4px #eaea4c;
-}
-
-.sadness p {
-  color: #827aca;
-  text-shadow: 0 0 4px #827aca;
-}
-
-.fear p {
-  color: #7aca8b;
-  text-shadow: 0 0 4px #7aca8b;
-}
-
-.anger p {
-  color: #ed5362;
-  text-shadow: 0 0 4px #ed5362;
-}
-
-.surprise p {
-  color: #5eedeb;
-  text-shadow: 0 0 4px #5eedeb;
-}
-
-.other p {
-  color: #e7e1da;
-  text-shadow: 0 0 4px #e7e1da;
-}
-
