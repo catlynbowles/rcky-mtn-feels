@@ -4,13 +4,13 @@ import "./FeelingSelection.css";
 import PropTypes from "prop-types";
 
 const primaryEmotions = [
-  { name: "sadness", color: "#827aca" },
-  { name: "happiness", color: "#eaea4c" },
-  { name: "fear", color: "#7aca8b" },
-  { name: "anger", color: "#ed5362" },
-  { name: "surprise", color: "#5eedeb" },
-  { name: "disgust", color: "#0000FF" },
-  { name: "love", color: "#ea4c89" },
+  { name: "sad", color: "#827aca" },
+  { name: "happy", color: "#eaea4c" },
+  { name: "afraid", color: "#7aca8b" },
+  { name: "angry", color: "#ed5362" },
+  { name: "surprised", color: "#5eedeb" },
+  { name: "disgusted", color: "#0000FF" },
+  { name: "loved", color: "#ea4c89" },
 ];
 
 const FeelingSelection = () => {
