@@ -1,15 +1,11 @@
-import { Component } from "react";
 import "./Homepage.css";
-import { Route } from "react-router-dom";
-import Emotions from "../FeelingSelection/FeelingSelection";
-import FeelingView from "../CheckIn/CheckIn";
-import LoadingIcon from "../../LoadingIcon/LoadingIcon";
+import { Route } from "react-router-dom/cjs/react-router-dom";
 import Error from "../Error/Error";
 import { getData } from "../../apiCalls";
 import Header from "../Header/Header";
-import Subtitle from "../Subtitle/Subtitle";
 import { useState, useEffect } from "react";
 import FeelingSelection from "../FeelingSelection/FeelingSelection";
+import CheckIn from "../CheckIn/CheckIn";
 
 const Homepage = () => {
   const [primaryEmotions, setPrimaryEmotions] = useState([]);
@@ -34,29 +30,17 @@ const Homepage = () => {
   return (
     <body className="body">
       <Header />
-      <FeelingSelection />
-      {/* <Route
+      <Route
         exact
         path="/"
-        render={() => (
-          <section>
-            <Subtitle />
-            {error ? (
-              <Error text={error} />
-            ) : !primaryEmotions.length ? (
-              <LoadingIcon />
-            ) : (
-              <Emotions primaryEmotions={primaryEmotions} />
-            )}
-          </section>
-        )}
+        render={() => (error ? <Error text={error} /> : <FeelingSelection />)}
       />
       <Route
-        path={`/:name`}
+        path={`/feeling/:name`}
         render={({ match }) => {
-          return <FeelingView id={match.params.name} />;
+          return <CheckIn id={match.params.name} />;
         }}
-      /> */}
+      />
     </body>
   );
 };
