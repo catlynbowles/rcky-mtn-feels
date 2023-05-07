@@ -15,15 +15,18 @@ export const getData = async (dataSearch) => {
   };
 
   let json = null;
-  try {
-    const response = await fetch(url, options);
-    const xmlData = await response.text();
-    parseString(xmlData, function (err, result) {
-      console.dir(result, "result");
-      json = result;
-    });
-  } catch (error) {
-    console.error(error, "error");
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    console.log(response);
+    if (response.status === 429) {
+      throw new Error(`This website runs on limited API requests, and the quota has been met for the day! Try back with tomorrow's feelings!`)
+    }
+    throw new Error(`Error! status: ${response.status}`);
   }
+  const xmlData = await response.text();
+  parseString(xmlData, function (err, result) {
+    console.dir(result, "result");
+    json = result;
+  });
   return json;
 };

@@ -1,0 +1,24 @@
+.about {
+  margin: 2rem;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.description {
+  color: white;
+  font-weight: 300;
+  text-shadow: 0 0 4px white;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container {
+  width: 50%;
+  text-indent: 30px;
+  line-height: 1.8;
+}

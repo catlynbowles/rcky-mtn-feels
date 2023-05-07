@@ -5,6 +5,7 @@ import "./CheckIn.css";
 import "../Button/Button.css";
 import PropTypes from "prop-types";
 import Gallery from "../Gallery/Gallery";
+import Error from "../Error/Error";
 
 const CheckIn = ({ userFeeling }) => {
   const [error, setError] = useState(null);
@@ -37,14 +38,23 @@ const CheckIn = ({ userFeeling }) => {
           const randomSelection = getRandomSelection(data.feelings.feeling);
           setPostcards(randomSelection);
         })
-        .catch((err) => console.log("err", err));
+        .catch((err) => {
+          console.log("err", err.message);
+          setError(err.message);
+        });
     }
   }, [userFeeling, postcards]);
 
   return (
     <section className="page-container">
       <h2 className="subtitle">you're not alone</h2>
-      <Gallery postcards={postcards} />
+      {!error ? (
+        <div>
+          <Gallery postcards={postcards} />
+        </div>
+      ) : (
+        <Error text={error} />
+      )}
       <div className="button-container">
         <div
           className="checkin-buttons feelingButton refresh"

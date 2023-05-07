@@ -13,6 +13,23 @@
   text-shadow: 0 0 4px white;
 }
 
+.learn-more p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 9rem;
+  color: #3fd560;
+  text-shadow: 0 0 4px #3fd560;
+}
+
+.options-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem;
+}
+
 @media (max-width: 600px) {
   .button-container {
     flex-direction: column;
