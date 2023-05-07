@@ -23,7 +23,7 @@ export const getData = async (dataSearch) => {
       json = result;
     });
   } catch (error) {
-    console.error(error);
+    console.error(error, 'error');
   }
   return json;
 };

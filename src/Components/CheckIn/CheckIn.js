@@ -13,11 +13,14 @@ const CheckIn = ({ userFeeling }) => {
   useEffect(() => {
     // console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
     getData(
-      `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
-    ).then((data) => {
-      setPostcards(data.feelings.feeling);
-      console.log(postcards, "postcards");
-    });
+      `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5&extraimages=5`
+    )
+      .then((data) => {
+        console.log(data);
+        setPostcards(data.feelings.feeling);
+        console.log(postcards, "postcards");
+      })
+      .catch((err) => console.log("err", err));
     // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
   }, []);
 

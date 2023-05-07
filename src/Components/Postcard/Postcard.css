@@ -3,15 +3,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
+  border-radius: 50%;
 }
 
 .sentence {
   color: white;
   position: absolute;
-  top: 50%;
-  right: 50%;
   transition: opacity 1s, visibility 1s;
   visibility: hidden;
+  margin: 3rem;
+  text-align: center;
 }
 
 .postcard-wrapper:hover .sentence {
@@ -20,6 +22,6 @@
 }
 
 .postcard-wrapper:hover .postcard {
-  opacity: 35%;
+  opacity: 15%;
   transition: opacity 1s, visibility 1s;
 }
