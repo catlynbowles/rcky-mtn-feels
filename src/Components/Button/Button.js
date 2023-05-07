@@ -4,7 +4,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 import "./Button.css";
 
 const Button = ({ name, color }) => {
-  console.log(color);
   return (
     <Link to={`/feeling/${name}`} style={{ textDecoration: "none" }}>
       <div

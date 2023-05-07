@@ -12,7 +12,12 @@ const CheckIn = ({ userFeeling }) => {
 
   useEffect(() => {
     // console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
-    getData().then((data) => setPostcards(data));
+    getData(
+      `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
+    ).then((data) => {
+      setPostcards(data.feelings.feeling);
+      console.log(postcards, "postcards");
+    });
     // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
   }, []);
 
@@ -20,33 +25,34 @@ const CheckIn = ({ userFeeling }) => {
     <section className="page-container">
       <h2 className="subtitle">you're not alone</h2>
       <Gallery
-        postcards={[
-          {
-            sentence: "hi",
-            postdate: "2013-12-05",
-            imageid: "TUWCM9I9sPSgGc89XgvLmw",
-          },
-          {
-            sentence: "hi",
-            postdate: "2013-12-05",
-            imageid: "TUWCM9I9sPSgGc89XgvLmw",
-          },
-          {
-            sentence: "hi",
-            postdate: "2013-12-05",
-            imageid: "TUWCM9I9sPSgGc89XgvLmw",
-          },
-          {
-            sentence: "hi",
-            postdate: "2013-12-05",
-            imageid: "TUWCM9I9sPSgGc89XgvLmw",
-          },
-          {
-            sentence: "hi",
-            postdate: "2013-12-05",
-            imageid: "TUWCM9I9sPSgGc89XgvLmw",
-          },
-        ]}
+        postcards={postcards}
+        // postcards={[
+        //   {
+        //     sentence: "hi",
+        //     postdate: "2013-12-05",
+        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
+        //   },
+        //   {
+        //     sentence: "hi",
+        //     postdate: "2013-12-05",
+        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
+        //   },
+        //   {
+        //     sentence: "hi",
+        //     postdate: "2013-12-05",
+        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
+        //   },
+        //   {
+        //     sentence: "hi",
+        //     postdate: "2013-12-05",
+        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
+        //   },
+        //   {
+        //     sentence: "hi",
+        //     postdate: "2013-12-05",
+        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
+        //   },
+        // ]}
       />
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="feelingButton home-button">
