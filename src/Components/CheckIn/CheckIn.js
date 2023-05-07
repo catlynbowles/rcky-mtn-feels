@@ -9,32 +9,55 @@ import Gallery from "../Gallery/Gallery";
 const CheckIn = ({ userFeeling }) => {
   const [error, setError] = useState(null);
   const [postcards, setPostcards] = useState([]);
+  const [collection, setCollection] = useState([]);
+
+  const getRandomSelection = (array) => {
+    let imageElements = array.filter((ele) => ele.$.imageid);
+
+    const shuffled = imageElements.sort(() => 0.5 - Math.random());
+
+    let selected = shuffled.slice(0, 5);
+    return selected;
+  };
+
+  const refreshImages = (e) => {
+    e.preventDefault();
+
+    const randomSelection = getRandomSelection(collection);
+    setPostcards(randomSelection);
+  };
 
   useEffect(() => {
-    const date = new Date();
-    const month = date.getMonth() + 1;
-    const day = date.getDay();
-    console.log(date.getMonth() + 1, date.getDay());
-    // console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
-    getData()
-    // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5&extraimages=8&postdate=2012-${month}-${day}`
-      .then((data) => {
-        console.log(data);
-        setPostcards(data.feelings.feeling);
-        console.log(postcards, "postcards");
-      })
-      .catch((err) => console.log("err", err));
-  }, []);
+    if (!postcards.length) {
+      getData(
+        `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=500&extraimages=8`
+      )
+        .then((data) => {
+          setCollection(data.feelings.feeling);
+          const randomSelection = getRandomSelection(data.feelings.feeling);
+          setPostcards(randomSelection);
+        })
+        .catch((err) => console.log("err", err));
+    }
+  }, [userFeeling, postcards]);
 
   return (
     <section className="page-container">
       <h2 className="subtitle">you're not alone</h2>
       <Gallery postcards={postcards} />
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <div className="feelingButton home-button">
-          <p>Back</p>
+      <div className="button-container">
+        <div
+          className="checkin-buttons feelingButton refresh"
+          onClick={(e) => refreshImages(e)}
+        >
+          <p>Refresh</p>
         </div>
-      </Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <div className="feelingButton checkin-buttons">
+            <p>Back</p>
+          </div>
+        </Link>
+      </div>
     </section>
   );
 };

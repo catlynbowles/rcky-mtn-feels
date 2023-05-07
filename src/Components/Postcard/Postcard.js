@@ -3,12 +3,10 @@ import "./Postcard.css";
 
 export default function Postcard({ sentence, imageid, postdate }) {
   const formFullImage = (postdate, imageid) => {
-    console.log(postdate, imageid);
     let imgpath = `http://images.wefeelfine.org/data/images/`;
     imgpath += postdate.replaceAll("-", "/");
     imgpath += "/" + imageid;
     imgpath += "_full.jpg";
-    console.log(imgpath);
     return imgpath;
   };
 

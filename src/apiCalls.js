@@ -13,7 +13,7 @@ export const getData = async (dataSearch) => {
       "my-url": dataSearch,
     }),
   };
-  
+
   let json = null;
   try {
     const response = await fetch(url, options);
@@ -23,7 +23,7 @@ export const getData = async (dataSearch) => {
       json = result;
     });
   } catch (error) {
-    console.error(error, 'error');
+    console.error(error, "error");
   }
   return json;
 };
