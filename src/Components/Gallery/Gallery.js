@@ -4,11 +4,8 @@ import Postcard from "../Postcard/Postcard";
 import "./Gallery.css";
 
 export default function Gallery({ postcards }) {
-  console.log(postcards);
-  // console.log(postcards[0].$, "7");
   const generatePostcards = () => {
     return postcards.map((postcard) => {
-      console.log(postcard.$);
       if (postcard.$.imageid) {
         return (
           <Postcard
@@ -22,8 +19,7 @@ export default function Gallery({ postcards }) {
   };
   return (
     <div className="gallery">
-      {postcards.length && generatePostcards()}
-      {/* {!postcards.length ? <LoadingIcon /> : generatePostcards()} */}
+      {postcards.length ? generatePostcards() : <LoadingIcon />}
     </div>
   );
 }

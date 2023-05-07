@@ -11,52 +11,25 @@ const CheckIn = ({ userFeeling }) => {
   const [postcards, setPostcards] = useState([]);
 
   useEffect(() => {
+    const date = new Date();
+    const month = date.getMonth() + 1;
+    const day = date.getDay();
+    console.log(date.getMonth() + 1, date.getDay());
     // console.log(formFullImage("2013-12-05", "TUWCM9I9sPSgGc89XgvLmw"));
-    getData(
-      `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5&extraimages=5`
-    )
+    getData()
+    // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5&extraimages=8&postdate=2012-${month}-${day}`
       .then((data) => {
         console.log(data);
         setPostcards(data.feelings.feeling);
         console.log(postcards, "postcards");
       })
       .catch((err) => console.log("err", err));
-    // `http://api.wefeelfine.org:8080/ShowFeelings?display=xml&returnfields=sentence,imageid,postdate&feeling=${userFeeling}&limit=5`
   }, []);
 
   return (
     <section className="page-container">
       <h2 className="subtitle">you're not alone</h2>
-      <Gallery
-        postcards={postcards}
-        // postcards={[
-        //   {
-        //     sentence: "hi",
-        //     postdate: "2013-12-05",
-        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
-        //   },
-        //   {
-        //     sentence: "hi",
-        //     postdate: "2013-12-05",
-        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
-        //   },
-        //   {
-        //     sentence: "hi",
-        //     postdate: "2013-12-05",
-        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
-        //   },
-        //   {
-        //     sentence: "hi",
-        //     postdate: "2013-12-05",
-        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
-        //   },
-        //   {
-        //     sentence: "hi",
-        //     postdate: "2013-12-05",
-        //     imageid: "TUWCM9I9sPSgGc89XgvLmw",
-        //   },
-        // ]}
-      />
+      <Gallery postcards={postcards} />
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="feelingButton home-button">
           <p>Back</p>
